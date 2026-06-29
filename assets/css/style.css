@@ -428,11 +428,7 @@ ul li{
 
 /* Technology Section End */
 /* Paid Section Start */
-.services-section{
-    /* background:#f3f3f3; */
-}
-
-.nav-pills .nav-link{
+/* .services-section .nav-pills .nav-link{
     display:flex;
     align-items:center;
     gap:20px;
@@ -502,6 +498,164 @@ ul li{
     font-weight: 400;
 
 }
+
+
+
+
+.acc-content {
+    display: none;
+    padding-left: 95px;  
+    margin-bottom: 25px;
+    overflow: hidden;      
+}
+
+.acc-content.active {
+    display: block;
+}
+
+.acc-content .mobile-list {
+    list-style: none;     
+    padding: 0;           
+    margin: 0;             
+    display: flex;
+    flex-direction: column;
+    gap: 12px;            
+}
+
+.acc-content .mobile-list li {
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A4A4A;       
+    line-height: 1.4;     
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.acc-content .mobile-list li:hover {
+    color: #022d63;      
+}
+
+.acc-content {
+    overflow: hidden;
+    width: 100%;
+} */
+ .services-section .nav-pills .nav-link{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:none;
+    border:none;
+    color:#000;
+    font-size:40px;
+    font-weight:800;
+    margin-bottom:15px;
+    padding:0;
+}
+
+.icon-box{
+    width:75px;
+    height:75px;
+    border:2px dashed #d2d2d2;
+    border-radius:8px;
+    position:relative;
+    flex-shrink:0;
+}
+
+.icon-box::after{
+    content:"";
+    width:45px;
+    height:45px;
+    border-radius:8px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.paid::after{ background:#022d63; }
+.seo::after{ background:#f8a600; }
+.smm::after{ background:#26b6d3; }
+
+.nav-pills .nav-link.active{
+    background:none;
+    color:#022d63;
+}
+
+/* Ensure right side panels are stacked for cross-fade */
+.tab-content {
+    position: relative;
+    width: 100%;
+}
+
+.tab-pane-unique {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Default state: hidden */
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Paid Ads graphic is visible on page load */
+#paid-ads-graphic {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tab-pane-unique.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tab-pane-unique img,
+.tab-pane-unique dotlottie-player {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.acc-content{
+    display:none; /* Default state for accordions */
+    padding-left:95px;
+    margin-bottom:20px;
+    overflow: hidden;
+}
+
+/* Paid Ads accordion is open on page load */
+.acc-content.active{
+    display:block;
+}
+
+.acc-content ul li{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.acc-content .mobile-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.acc-content .mobile-list li {
+    font-size: 20px;
+    font-weight: 400;
+    color: #4A4A4A;
+    line-height: 1.4;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.acc-content .mobile-list li:hover {
+    color: #022d63;
+}
+
 /* Paid Section End */
 /* Data Section Start */
 .data-section{
@@ -519,24 +673,18 @@ ul li{
 }
 
  .highlight{
-    /* font-family:'Caveat', cursive;
-    color:#ffd400;
-    text-transform:none;
-    font-size:85px;
-    display:inline-block;
-    margin:0 10px; */
+  
 
     font-size: 85px;
     font-family: "Covered By Your Grace", cursive;
     font-weight: 400;
 
     color: #ffd900;
-    /* transform: skew(-8deg, -4deg); */
-      /* transform: rotate(-8deg); */
+   
        transform: rotate(-20deg);
     line-height: 0.9;
     margin-top: -20px;
-    /* text-transform: capitalize; */
+  
     position: relative;
 }
 
@@ -552,7 +700,10 @@ ul li{
     overflow:hidden;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
+}
+.data-section {
+    overflow: hidden; /* Yeh cards ko section se bahar nikalne se rokega */
 }
 
 .stat-card img{
