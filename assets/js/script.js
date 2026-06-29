@@ -836,3 +836,85 @@ function animateNumber(step){
     });
 
 }
+// data section start
+gsap.registerPlugin(ScrollTrigger);
+
+// Sab Stat Cards — Up Down Animation
+gsap.utils.toArray(".stat-card").forEach((card, i) => {
+  // Even cards upar se aayenge, Odd cards neeche se
+  const direction = i % 2 === 0 ? -120 : 120;
+
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 90%",
+      toggleActions: "play none none reverse"
+    },
+    duration: 1,
+    y: direction,
+    opacity: 0,
+    ease: "power3.out"
+  });
+});
+
+// Logo Box Animation
+gsap.from(".logo-box", {
+  scrollTrigger: {
+    trigger: ".data-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  },
+  duration: 1.2,
+  scale: 0,
+  opacity: 0,
+  ease: "back.out(1.7)"
+});
+
+// Heading Animation
+gsap.from(".data-section .main-heading", {
+  scrollTrigger: {
+    trigger: ".data-section",
+    start: "top 85%",
+    toggleActions: "play none none reverse"
+  },
+  duration: 1,
+  y: 40,
+  opacity: 0,
+  stagger: 0.2,
+  ease: "power3.out"
+});
+
+// Highlight Animation
+gsap.from(".data-section .highlight", {
+  scrollTrigger: {
+    trigger: ".data-section",
+    start: "top 85%",
+    toggleActions: "play none none reverse"
+  },
+  duration: 1,
+  scale: 0,
+  opacity: 0,
+  delay: 0.3,
+  ease: "back.out(1.7)"
+});
+// Color Change
+gsap.registerPlugin(ScrollTrigger);
+
+// Stat Cards — Alternating Up/Down Animation (Fixed)
+gsap.utils.toArray(".stat-card").forEach((card, i) => {
+  const direction = i % 2 === 0 ? -120 : 120;
+
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 95%",      // ← threshold thoda neeche kiya
+      end: "bottom 5%",
+      toggleActions: "play none none reverse"
+    },
+    duration: 0.9,
+    y: direction,
+    opacity: 0,
+    delay: i * 0.1,          // ← har card ka alag delay
+    ease: "power3.out"
+  });
+});
