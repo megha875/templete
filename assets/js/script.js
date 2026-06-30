@@ -1,4 +1,5 @@
 
+//Slider Footer
 var swiper = new Swiper(".partnerSwiper", {
     slidesPerView: 5,
     spaceBetween: 20,
@@ -26,7 +27,7 @@ var swiper = new Swiper(".partnerSwiper", {
     }
 });
 
-
+// Grapiic Section
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = gsap.utils.toArray(".custom-card");
@@ -116,77 +117,10 @@ gsap.utils.toArray(".graph-img").forEach((item, index) => {
 
 
 
-// gsap.registerPlugin(ScrollTrigger);
 
-// gsap.utils.toArray(".bg-reveal").forEach((bg) => {
 
-//     gsap.fromTo(bg,
-//         {
-//             clipPath: "ellipse(150% 0% at 50% 0%)"
-//         },
-//         {
-//             clipPath: "ellipse(150% 70% at 50% 0%)", // half card curved fill
-//             ease: "none",
-//             scrollTrigger: {
-//                 trigger: bg.parentElement,
-//                 start: "top 80%",
-//                 end: "center center",
-//                 scrub: true
-//             }
-//         }
-//     );
 
-// });
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// gsap.utils.toArray(".curve-bg").forEach((bg) => {
-
-//   gsap.fromTo(
-//     bg,
-//     {
-//       clipPath: "ellipse(180% 0% at 50% 100%)"
-//     },
-//     {
-//       clipPath: "ellipse(120% 60% at 50% 100%)",
-//       ease: "none",
-//       scrollTrigger: {
-//         trigger: bg.parentElement,
-//         start: "top 85%",
-//         end: "center center",
-//         scrub: true
-//       }
-//     }
-//   );
-
-// });
-// gsap.to(".cs-card navy",{
-//    y:"-50%",
-//    scrollTrigger:{
-//       trigger:".cs-card",
-//       start:"top 80%",
-//       end:"center center",
-//       scrub:true
-//    }
-// });
-
-// gsap.fromTo(
-//     bg,
-//     {
-//         clipPath: "ellipse(150% 0% at 50% 100%)"
-//     },
-//     {
-//         clipPath: "ellipse(150% 120% at 50% 100%)",
-//         ease: "none",
-//         scrollTrigger: {
-//             trigger: bg.closest(".cs-card"),
-//             start: "top 85%",
-//             end: "bottom 40%",
-//             scrub: true
-//         }
-//     }
-// );
-
+// Card Ecllipse
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -496,312 +430,18 @@ gsap.registerPlugin(ScrollTrigger);
             }
         });
 
-        // gsap.from(".cta-btn", {
-        //     y: 30,
-        //     opacity: 0,
-        //     duration: 1,
-        //     delay: 0.3,
-        //     ease: "power3.out",
-        //     scrollTrigger: {
-        //         trigger: "#animatedSection",
-        //         start: "top 70%",
-        //         toggleActions: "play none none reverse"
-        //     }
-        // });
-// Adds Section Start
-document.querySelectorAll("#service-tab .nav-link").forEach((btn) => {
+       
 
-    btn.addEventListener("click", function () {
 
-        const target = this.dataset.bsTarget;
 
-        let currentContent;
+  
 
-        if(target === "#paidads"){
-            currentContent = document.getElementById("paid-content");
-        }
-        else if(target === "#seo"){
-            currentContent = document.getElementById("seo-content");
-        }
-        else if(target === "#smm"){
-            currentContent = document.getElementById("smm-content");
-        }
 
-        // Hide all
-        document.querySelectorAll(".acc-content").forEach((content) => {
 
-            content.style.display = "none";
-            content.classList.remove("active");
 
-        });
 
-        // Show current
-        currentContent.style.display = "block";
-        currentContent.classList.add("active");
 
-        gsap.fromTo(
-            currentContent,
-            {
-                height: 0,
-                opacity: 0
-            },
-            {
-                height: "auto",
-                opacity: 1,
-                duration: 0.5,
-                ease: "power2.out"
-            }
-        );
 
-    });
-
-});
-
-
-
-// 
-
-
-    
-// gsap.registerPlugin(ScrollTrigger);
-
-// const indicator = document.querySelector("#scroll_number");
-
-// document.querySelectorAll(".process-item").forEach((item)=>{
-
-//     const step = item.dataset.step;
-
-//     ScrollTrigger.create({
-//         trigger:item,
-//         start:"top center",
-//         end:"bottom center",
-
-//         onEnter:()=>moveIndicator(step),
-//         onEnterBack:()=>moveIndicator(step)
-//     });
-
-// });
-
-// function moveIndicator(step){
-
-//     const target =
-//         document.querySelector(`.step-box[data-num="${step}"]`);
-
-//     gsap.to(indicator,{
-//         y:target.offsetTop,
-//         duration:0.6,
-//         ease:"power3.inOut"
-//     });
-
-//     gsap.fromTo(target,{
-//         scale:0.9
-//     },{
-//         scale:1,
-//         duration:0.4,
-//         ease:"back.out(2)"
-//     });
-
-// }
-
-
-// gsap.registerPlugin(ScrollTrigger);
-
-//     // Function to activate a specific step number
-//     function activateStep(stepNum) {
-//         // Remove active class from all steps
-//         document.querySelectorAll(".step-box, .step-number").forEach(el => {
-//             el.classList.remove("active");
-//         });
-
-//         // Add active class to current step
-//         const current = document.querySelector(`[data-num="${stepNum}"]`);
-//         if (current) {
-//             current.classList.add("active");
-//         }
-//     }
-
-//     // Create ScrollTrigger for each process item
-//     document.querySelectorAll(".process-item").forEach((item) => {
-//         const step = item.dataset.step;
-
-//         ScrollTrigger.create({
-//             trigger: item,
-//             start: "top 60%",
-//             end: "bottom 40%",
-            
-//             onEnter: () => activateStep(step),
-//             onEnterBack: () => activateStep(step),
-            
-//             onToggle: (self) => {
-//                 if (self.isActive) {
-//                     gsap.fromTo(
-//                         item.querySelector(".process-content"),
-//                         {
-//                             opacity: 0.3,
-//                             y: 50
-//                         },
-//                         {
-//                             opacity: 1,
-//                             y: 0,
-//                             duration: 0.6,
-//                             ease: "power3.out"
-//                         }
-//                     );
-//                 }
-//             }
-//         });
-//     });
-
-//     // Optional: Animate step numbers on page load
-//     gsap.from(".step-box, .step-number", {
-//         scale: 0,
-//         opacity: 0,
-//         duration: 0.6,
-//         stagger: 0.2,
-//         ease: "back.out(1.7)",
-//         delay: 0.3
-//     });
-
-//     // Refresh ScrollTrigger on resize
-//     window.addEventListener("resize", () => {
-//         ScrollTrigger.refresh();
-// //     });
-// gsap.registerPlugin(ScrollTrigger);
-
-// // Initial State
-// gsap.set(".number-track", {
-//     y: 0
-// });
-
-// document.querySelectorAll(".process-item").forEach((item)=>{
-
-//     const step = parseInt(item.dataset.step);
-
-//     ScrollTrigger.create({
-//         trigger:item,
-//         start:"top center",
-//         end:"bottom center",
-
-//         onEnter:()=>{
-
-//             // Number Animation
-//             gsap.to(".number-track",{
-//                 y: -(step - 1) * 180,
-//                 duration:0.8,
-//                 ease:"power3.inOut"
-//             });
-
-//             // Content Animation
-//             gsap.fromTo(
-//                 item.querySelector(".process-content"),
-//                 {
-//                     opacity:0,
-//                     y:80
-//                 },
-//                 {
-//                     opacity:1,
-//                     y:0,
-//                     duration:0.8,
-//                     ease:"power3.out"
-//                 }
-//             );
-
-//         },
-
-//         onEnterBack:()=>{
-
-//             gsap.to(".number-track",{
-//                 y: -(step - 1) * 180,
-//                 duration:0.8,
-//                 ease:"power3.inOut"
-//             });
-
-//             gsap.fromTo(
-//                 item.querySelector(".process-content"),
-//                 {
-//                     opacity:0,
-//                     y:80
-// //                 },
-// //                 {
-// //                     opacity:1,
-// //                     y:0,
-// //                     duration:0.8,
-// //                     ease:"power3.out"
-// //                 }
-// //             );
-
-// //         }
-
-// //     });
-
-// // });
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// function moveNumber(step){
-
-//     gsap.to(".number-track",{
-//         y: -(step - 1) * 180,
-//         duration:0.8,
-//         ease:"power3.inOut"
-//     });
-
-// }
-
-// document.querySelectorAll(".process-item").forEach((item)=>{
-
-//     const step = Number(item.dataset.step);
-
-//     ScrollTrigger.create({
-//         trigger:item,
-//         start:"top 50%",
-//         end:"bottom 50%",
-
-//         onEnter:()=>{
-//             moveNumber(step);
-//         },
-
-//         onEnterBack:()=>{
-//             moveNumber(step);
-//         }
-//     });
-
-// });
-
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// // Number animation function
-// function moveNumber(step){
-
-//     gsap.to(".number-track",{
-//         y: -(step - 1) * 180,
-//         duration:1,
-//         ease:"expo.inOut"
-//     });
-
-// }
-
-// // Trigger for each section
-// document.querySelectorAll(".process-item").forEach((item)=>{
-
-//     const step = Number(item.dataset.step);
-
-//     ScrollTrigger.create({
-//         trigger:item,
-//         start:"top center",
-//         end:"bottom center",
-
-//         onEnter:()=>{
-//             moveNumber(step);
-//         },
-
-//         onEnterBack:()=>{
-//             moveNumber(step);
-//         }
-//     });
-
-// });
 
 // gsap.registerPlugin(ScrollTrigger);
 
@@ -813,7 +453,7 @@ document.querySelectorAll("#service-tab .nav-link").forEach((btn) => {
 
 //     ScrollTrigger.create({
 //         trigger:item,
-//         start:"top 10%",
+//         start:"top 60%",
 //         end:"bottom 40%",
 
 //         onEnter:()=>{
@@ -836,105 +476,6 @@ document.querySelectorAll("#service-tab .nav-link").forEach((btn) => {
 //     });
 
 // }
-// // data section start
-// // Ensure GSAP and ScrollTrigger only run AFTER the page loads
-// document.addEventListener("DOMContentLoaded", function() {
-  
-//   gsap.registerPlugin(ScrollTrigger);
-
-//   // 1. Stat Cards ke liye ek alag Scroll-Bound Parallax Timeline
-//   // Yeh timeline section ke enter hone se lekar exit hone tak chalegi
-//   gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".data-section",
-//       start: "top bottom",      // Jab section ka top screen ke bottom se enter karega
-//       end: "bottom 10%",        // Jab section ka bottom screen ke top se baahar nikal jayega
-//       scrub: 5.8,               // ✅ Smooth scrolling trailing effect (Neeche scroll par move hoga, upar par wapas)
-//      // markers: true           // Tasalli ke liye markers check kar sakte hain
-//     }
-//   })
-//   .from(".stat-card", {
-//     // Even index (0, 2, 4) upar se neeche aayenge (-120px)
-//     // Odd index (1, 3, 5) neeche se upar jayenge (120px)
-//     y: (index) => (index % 2 === 0 ? -120 : 120),
-//     opacity: 0,                 // Scroll ke sath-sath fade-in honge
-//     duration: 1,
-//     ease: "none"                // Scrub ke sath "none" ease sabse smooth linear movement deta hai
-//   });
-
-//   // 2. Headings aur Baaki Content ke liye Normal Entrance Timeline
-//   // Yeh content ko ek hi jagah lock karke smoothly animate karega
-//   const contentTl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: ".data-section",
-//       start: "top 15%",
-//       toggleActions: "play none none reverse" // Normal play/reverse behavior
-//     }
-//   });
-
-//   contentTl.from(".logo-box", {
-//     duration: 1.2,
-//     scale: 0,
-//     opacity: 0,
-//     // ease: "back.out(1.5)"
-//   }, 0)
-//   .from(".main-heading", {
-//     duration: 0.8,
-//     y: 30,
-//     opacity: 0,
-//     // stagger: 0.15,
-//     // ease: "power2.out"
-//   }, 0.2)
-//   .from(".highlight", {
-//     duration: 0.8,
-//     scale: 0,
-//     opacity: 1,
-//     // ease: "back.out(1.5)"
-//   }, 0.4)
-//   .from(".sub-text", {
-//     duration: 0.8,
-//     y: 20,
-//     opacity: 1,
-//     // ease: "power2.out"
-//   }, 0.5);
-
-// });
-
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-const slideHeight = 180;
-
-document.querySelectorAll(".process-item").forEach((item)=>{
-
-    const step = parseInt(item.dataset.step);
-
-    ScrollTrigger.create({
-        trigger:item,
-        start:"top 60%",
-        end:"bottom 40%",
-
-        onEnter:()=>{
-            animateNumber(step);
-        },
-
-        onEnterBack:()=>{
-            animateNumber(step);
-        }
-    });
-
-});
-
-function animateNumber(step){
-
-    gsap.to(".number-track",{
-        y: -(step - 1) * slideHeight,
-        duration:1.2,
-        ease:"power4.inOut"
-    });
-
-}
 
 // ==========================================
 // DATA SECTION START
@@ -1004,17 +545,13 @@ document.addEventListener("DOMContentLoaded", function() {
 //     // ==========================================
 //     // ALL Clicks Permanently Disable
 //     // ==========================================
-//     document.querySelectorAll("#service-tab .nav-link").forEach((btn) => {
+//     // Target the unique trigger buttons
+//     document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
 //         btn.style.pointerEvents = "none";
 //         btn.style.cursor = "default";
 //         btn.removeAttribute("data-bs-toggle");
 //         btn.removeAttribute("data-bs-target");
 //         btn.removeAttribute("href");
-//     });
-
-//     // Bootstrap tab events bhi band karo
-//     document.querySelectorAll(".tab-pane").forEach((pane) => {
-//         pane.classList.remove("active", "show", "fade");
 //     });
 
 //     // ==========================================
@@ -1026,209 +563,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //         overflow: "visible"
 //     });
 
-//     gsap.set(".tab-pane", {
-//         position: "absolute",
-//         top: 0, left: 0,
-//         width: "100%",
-//         autoAlpha: 0,
-//         display: "block",
-//         overflow: "visible"
-//     });
-
-//     // Pehla graphic visible
-//     gsap.set("#paidads", { autoAlpha: 1 });
-
-//     // Accordion setup
-//     gsap.set(".acc-content", {
-//         display: "block",
-//         height: 0,
-//         autoAlpha: 0,
-//         overflow: "visible"
-//     });
-//     gsap.set("#paid-content", {
-//         display: "block",
-//         height: "auto",
-//         autoAlpha: 1,
-//         overflow: "visible"
-//     });
-
-//     // Nav colors
-//     gsap.set("#service-tab .nav-link", { color: "#000" });
-//     gsap.set("#service-tab .nav-link:first-child", { color: "#022d63" });
-
-//     // Sab list items hidden + offset
-//     ["#paid-content li", "#seo-content li", "#smm-content li"].forEach((sel) => {
-//         gsap.utils.toArray(sel).forEach((li, i) => {
-//             gsap.set(li, { opacity: 0, y: i % 2 === 0 ? -50 : 50 });
-//         });
-//     });
-
-//     // ==========================================
-//     // Master Timeline — ONLY Scroll Driven
-//     // ==========================================
-//     const tl = gsap.timeline({
-//         scrollTrigger: {
-//             trigger: ".services-section",
-//             start: "top top",
-//             end: "+=4000",
-//             pin: true,
-//             scrub: 2,
-//             invalidateOnRefresh: true
-//         }
-//     });
-
-//     // Parallax
-//     tl.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
-
-//     // ==========================================
-//     // PAID — List ek ek karke aaye
-//     // ==========================================
-//     gsap.utils.toArray("#paid-content li").forEach((li, i) => {
-//         tl.to(li, {
-//             y: 0,
-//             opacity: 1,
-//             duration: 0.6,
-//             // ease: "power3.out"
-//         }, 0.1 + i * 0.15);
-//     });
-
-//     tl.to({}, { duration: 2 }); // Read time
-
-//     // ==========================================
-//     // STEP 1: Paid → SEO
-//     // ==========================================
-
-//     // Paid list exit
-//     gsap.utils.toArray("#paid-content li").forEach((li, i) => {
-//         tl.to(li, {
-//             y: i % 2 === 0 ? 50 : -50,
-//             opacity: 0,
-//             duration: 0.35,
-//             // ease: "power2.in"
-//         }, `s1_exit+=${i * 0.08}`);
-//     });
-
-//     // Paid accordion close
-//     tl.to("#paid-content", {
-//         height: 0,
-//         autoAlpha: 0,
-//         duration: 0.8,
-//         // ease: "power2.inOut"
-//     }, "s1_close");
-
-//     // Right graphic switch
-//     tl.to("#paidads", { autoAlpha: 0, duration: 0.6 }, "s1_close")
-//       .to("#seo",     { autoAlpha: 1, duration: 0.6 }, "s1_close");
-
-//     // Nav color switch
-//     // tl.to("#service-tab .nav-link:nth-child(1)", { color: "#000",    duration: 0.5 }, "s1_close")
-//     //   .to("#service-tab .nav-link:nth-child(2)", { color: "#022d63", duration: 0.5 }, "s1_close");
-
-//     // SEO accordion open
-//     tl.to("#seo-content", {
-//         display: "block",
-//         height: "auto",
-//         autoAlpha: 1,
-//         overflow: "visible",
-//         duration: 0.8,
-//         // ease: "power2.inOut"
-//     }, "s1_open");
-
-//     // SEO list ek ek karke aaye
-//     gsap.utils.toArray("#seo-content li").forEach((li, i) => {
-//         tl.to(li, {
-//             y: 0,
-//             opacity: 1,
-//             duration: 0.6,
-//             // ease: "power3.out"
-//         }, `s1_in+=${0.3 + i * 0.15}`);
-//     });
-
-//     tl.to({}, { duration: 2 }); // Read time
-
-//     // ==========================================
-//     // STEP 2: SEO → SMM
-//     // ==========================================
-
-//     // SEO list exit
-//     gsap.utils.toArray("#seo-content li").forEach((li, i) => {
-//         tl.to(li, {
-//             y: i % 2 === 0 ? 50 : -50,
-//             opacity: 0,
-//             duration: 0.35,
-//             // ease: "power2.in"
-//         }, `s2_exit+=${i * 0.08}`);
-//     });
-
-//     // SEO accordion close
-//     tl.to("#seo-content", {
-//         height: 0,
-//         autoAlpha: 0,
-//         duration: 0.8,
-//         // ease: "power2.inOut"
-//     }, "s2_close");
-
-//     // Right graphic switch
-//     tl.to("#seo", { autoAlpha: 0, duration: 0.6 }, "s2_close")
-//       .to("#smm", { autoAlpha: 1, duration: 0.6 }, "s2_close");
-
-//     // Nav color switch
-//     tl.to("#service-tab .nav-link:nth-child(2)", { color: "#000",    duration: 0.5 }, "s2_close")
-//       .to("#service-tab .nav-link:nth-child(3)", { color: "#022d63", duration: 0.5 }, "s2_close");
-
-//     // SMM accordion open
-//     tl.to("#smm-content", {
-//         // display: "block",
-//         height: "auto",
-//         autoAlpha: 1,
-//         // overflow: "visible",
-//         duration: 0.8,
-//         // ease: "power2.inOut"
-//     }, "s2_open");
-
-//     // SMM list ek ek karke aaye
-//     gsap.utils.toArray("#smm-content li").forEach((li, i) => {
-//         tl.to(li, {
-//             y: 0,
-//             opacity: 1,
-//             duration: 0.6,
-//             // ease: "power3.out"
-//         }, `s2_in+=${0.3 + i * 0.15}`);
-//     });
-
-//     tl.to({}, { duration: 2 }); // End hold
-
-// });
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     // ==========================================
-//     // ALL Clicks Permanently Disable
-//     // ==========================================
-//     document.querySelectorAll("#service-tab .nav-link").forEach((btn) => {
-//         btn.style.pointerEvents = "none";
-//         btn.style.cursor = "default";
-//         btn.removeAttribute("data-bs-toggle");
-//         btn.removeAttribute("data-bs-target");
-//         btn.removeAttribute("href");
-//     });
-
-//     // Bootstrap tab events bhi band karo
-//     document.querySelectorAll(".tab-pane").forEach((pane) => {
-//         pane.classList.remove("active", "show", "fade");
-//     });
-
-//     // ==========================================
-//     // Initial Setup
-//     // ==========================================
-//     gsap.set(".tab-content", {
-//         position: "relative",
-//         minHeight: "500px",
-//         overflow: "visible"
-//     });
-
-//     gsap.set(".tab-pane", {
+//     // Ensure all unique graphic panes are stacked but hidden except the first one
+//     gsap.set(".tab-pane-unique", {
 //         position: "absolute",
 //         top: 0, 
 //         left: 0,
@@ -1238,33 +574,27 @@ document.addEventListener("DOMContentLoaded", function() {
 //         overflow: "visible"
 //     });
 
-//     // Pehla graphic/image initial state mein visible rahega
-//     gsap.set("#paidads", { autoAlpha: 1 });
-
-//     // Accordion setup
-//     gsap.set(".acc-content", {
-//         display: "block",
-//         height: 0,
-//         autoAlpha: 0,
-//         overflow: "visible"
-//     });
+//     // Initial State: Paid Ads graphic visible, Paid Ads accordion open
+//     gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
     
-//     // Pehla accordion content shuruat mein open dikhega
-//     gsap.set("#paid-content", {
+//     gsap.set("#paid-content-accordion", {
 //         display: "block",
 //         height: "auto",
 //         autoAlpha: 1,
 //         overflow: "visible"
 //     });
 
-//     // Nav colors initial state
-//     gsap.set("#service-tab .nav-link", { color: "#000" });
-//     gsap.set("#service-tab .nav-link:first-child", { color: "#022d63" });
-
-//     // 🌟 FIX: Sabhi list items ko pehle se hi normal visible (opacity: 1) rakha hai (No hidden offset)
-//     ["#paid-content li", "#seo-content li", "#smm-content li"].forEach((sel) => {
-//         gsap.set(sel, { opacity: 1, y: 0 });
+//     // Accordion setup for others (start closed)
+//     gsap.set("#seo-content-accordion, #smm-content-accordion", {
+//         display: "block",
+//         height: 0,
+//         autoAlpha: 0,
+//         overflow: "visible"
 //     });
+
+//     // Nav colors initial state
+//     gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
+//     gsap.set("#paid-ads-trigger", { color: "#022d63" });
 
 //     // ==========================================
 //     // Master Timeline — ONLY Scroll Driven
@@ -1275,40 +605,39 @@ document.addEventListener("DOMContentLoaded", function() {
 //             start: "top top",
 //             end: "+=4000", 
 //             pin: true,
-//             scrub: 1.5,    // Smooth fluid scrub matching right side image speed
+//             scrub: 1.9,
 //             invalidateOnRefresh: true
 //         }
 //     });
 
-//     // Right side panel parallax logic
+//     // Right side panel subtle movement logic
 //     tl.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
 
-//     // Paid Ads stable view hold gap
+//     // Paid Ads view hold gap
 //     tl.to({}, { duration: 2 }); 
 
 //     // ==========================================
 //     // STEP 1: Paid → SEO
 //     // ==========================================
 
-//     // Paid accordion smoothly close hoga
-//     tl.to("#paid-content", {
+//     // Smoothly close Paid Ads accordion
+//     tl.to("#paid-content-accordion", {
 //         height: 0,
 //         autoAlpha: 0,
 //         duration: 0.8,
-//         ease: "power2.inOut"
+//         // ease: "power2.inOut"
 //     }, "s1_close");
 
-//     // 🌟 RIGHT SIDE IMAGE CROSS-FADE: Paid Ads image jayegi aur SEO image aayegi
-//     tl.to("#paidads", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
-//       .to("#seo",     { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
+//     // CROSS-FADE: Paid Ads graphic goes away, SEO graphic appears
+//     tl.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
+//       .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
 
 //     // Nav text color transition
-//     tl.to("#service-tab .nav-link:nth-child(1)", { color: "#000",    duration: 0.5 }, "s1_close")
-//       .to("#service-tab .nav-link:nth-child(2)", { color: "#022d63", duration: 0.5 }, "s1_close");
+//     tl.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
+//       .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
 
-//     // SEO accordion smoothly open hoga (li items automatic normal load honge)
-//     tl.to("#seo-content", {
-//         // display: "block",
+//     // Smoothly open SEO accordion
+//     tl.to("#seo-content-accordion", {
 //         height: "auto",
 //         autoAlpha: 1,
 //         overflow: "visible",
@@ -1316,181 +645,797 @@ document.addEventListener("DOMContentLoaded", function() {
 //         ease: "power2.inOut"
 //     }, "s1_close+=0.1");
 
-//     // SEO stable view hold gap
+//     // SEO view hold gap
 //     tl.to({}, { duration: 2 }); 
 
 //     // ==========================================
 //     // STEP 2: SEO → SMM
 //     // ==========================================
 
-//     // SEO accordion smoothly close hoga
-//     tl.to("#seo-content", {
+//     // Smoothly close SEO accordion
+//     tl.to("#seo-content-accordion", {
 //         height: 0,
 //         autoAlpha: 0,
 //         duration: 0.8,
-//         ease: "power2.inOut"
+//         // ease: "power2.inOut"
 //     }, "s2_close");
 
-//     // 🌟 RIGHT SIDE IMAGE CROSS-FADE: SEO image jayegi aur SMM image aayegi
-//     tl.to("#seo", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
-//       .to("#smm", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
+//     // CROSS-FADE: SEO graphic goes away, SMM graphic appears
+//     tl.to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
+//       .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
 
 //     // Nav text color transition
-//     tl.to("#service-tab .nav-link:nth-child(2)", { color: "#000",    duration: 0.5 }, "s2_close")
-//       .to("#service-tab .nav-link:nth-child(3)", { color: "#022d63", duration: 0.5 }, "s2_close");
+//     tl.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
+//       .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
 
-//     // SMM accordion smoothly open hoga
-//     tl.to("#smm-content", {
-//         // display: "block",
+//     // Smoothly open SMM accordion
+//     tl.to("#smm-content-accordion", {
 //         height: "auto",
 //         autoAlpha: 1,
 //         overflow: "visible",
 //         duration: 0.8,
-//         ease: "power2.inOut"
+//         // ease: "power2.inOut"
 //     }, "s2_close+=0.1");
 
 //     // Final state hold gap
-//     tl.to({}, { duration: 2 }); 
+//     t1.to({}, { duration: 2 }); 
 // });
-document.addEventListener("DOMContentLoaded", function () {
 
-    gsap.registerPlugin(ScrollTrigger);
 
-    // ==========================================
-    // ALL Clicks Permanently Disable
-    // ==========================================
-    // Target the unique trigger buttons
-    document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
-        btn.style.pointerEvents = "none";
-        btn.style.cursor = "default";
-        btn.removeAttribute("data-bs-toggle");
-        btn.removeAttribute("data-bs-target");
-        btn.removeAttribute("href");
-    });
 
-    // ==========================================
-    // Initial Setup
-    // ==========================================
-    gsap.set(".tab-content", {
-        position: "relative",
-        minHeight: "500px",
-        overflow: "visible"
-    });
 
-    // Ensure all unique graphic panes are stacked but hidden except the first one
-    gsap.set(".tab-pane-unique", {
-        position: "absolute",
-        top: 0, 
-        left: 0,
-        width: "100%",
-        autoAlpha: 0,
-        display: "block",
-        overflow: "visible"
-    });
+// Video Section Start Section 
 
-    // Initial State: Paid Ads graphic visible, Paid Ads accordion open
-    gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
-    
-    gsap.set("#paid-content-accordion", {
-        display: "block",
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible"
-    });
+gsap.registerPlugin(ScrollTrigger);
 
-    // Accordion setup for others (start closed)
-    gsap.set("#seo-content-accordion, #smm-content-accordion", {
-        display: "block",
-        height: 0,
-        autoAlpha: 0,
-        overflow: "visible"
-    });
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Nav colors initial state
-    gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
-    gsap.set("#paid-ads-trigger", { color: "#022d63" });
-
-    // ==========================================
-    // Master Timeline — ONLY Scroll Driven
-    // ==========================================
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".services-section",
-            start: "top top",
-            end: "+=4000", 
-            pin: true,
-            scrub: 1.9,
-            invalidateOnRefresh: true
+    // --- 1. CENTER BRAND BOX: Upar se neeche aayega aur wapas upar jayega ---
+    gsap.fromTo(".brand-box", 
+        { 
+            y: -200,       // Shuruat me screen ke upar (hidden) rahega
+            opacity: 0 
+        }, 
+        {
+            y: 0,          // Apni asli CSS center position par aa jayega
+            opacity: 1,
+            duration: 1.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".automation-section",
+                start: "top 80%",              // Jab section screen par aane lage
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse" // Scroll back par wapas upar chala jayega
+            }
         }
+    );
+
+    // --- 2. LEFT SIDE CARDS: Center se left ki taraf jayenge ---
+    gsap.fromTo(".email-card, .ads-card, .social-card", 
+        { 
+            x: 100,        // Shuruat me thoda center ki taraf compressed rahenge
+            opacity: 0 
+        }, 
+        {
+            x: 0,          // Apni asli left-side wali positions par chale jayenge
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1,  // Ek ke baad ek card khulega
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".automation-section",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    );
+
+    // --- 3. RIGHT SIDE CARDS: Center se right ki taraf jayenge ---
+    gsap.fromTo(".crm-card, .chatbot-card, .ticket-card", 
+        { 
+            x: -100,       // Shuruat me thoda center ki taraf compressed rahenge
+            opacity: 0 
+        }, 
+        {
+            x: 0,          // Apni asli right-side wali positions par chale jayenge
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".automation-section",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play reverse play reverse"
+            }
+        }
+    );
+});
+// // Our Process Section
+// gsap.registerPlugin(ScrollTrigger);
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const items = gsap.utils.toArray(".process-item");
+//     const slides = gsap.utils.toArray(".step-slide");
+
+//     const totalSlides = items.length;
+//     const slideHeight = 180; 
+//     const totalMoveAmount = (totalSlides - 1) * slideHeight;
+
+   
+//     gsap.to(".number-track", {
+//         y: -totalMoveAmount,
+//         ease: "none", 
+//         scrollTrigger: {
+//             trigger: ".process-section",
+//             start: " top 20%",
+//             end: "bottom 10% ", 
+//             scrub: 1,
+//             // pin: true, // Pure section ko screen par lock (pin) karega
+//             // anticipatePin: 1
+//         }
+//     });
+
+//     // 2. RIGHT TEXT COUPLING CONTROLLER
+//     items.forEach((item, index) => {
+//         const content = item.querySelector(".process-content");
+
+//         ScrollTrigger.create({
+//             trigger: ".process-section", // Pura section hi track base rahega
+//             start: "top 40%", 
+//             end: "bottom 10%", 
+//             // scrub: true,
+//             onToggle: (self) => {
+//                 if (self.isActive) {
+//                     // Jab yeh index active ho toh text fully visible hoga
+//                     gsap.to(content, { 
+//                         opacity: 1, 
+//                         scale: 1,
+//                         duration: 0.3 
+//                     });
+                    
+//                     // Left box ke andar active number white hoga
+//                     slides.forEach(s => s.style.color = "rgba(255, 255, 255, 0.15)");
+//                     if(slides[index]) slides[index].style.color = "#ffffff";
+//                 } else {
+//                     // Baaki numbers aur text translucent ho jayenge
+//                     gsap.to(content, { 
+//                         opacity: 0.1, 
+//                         scale: 0.95,
+//                         duration: 0.3 
+//                     });
+//                 }
+//             }
+//         });
+//     });
+// });
+
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const items = gsap.utils.toArray(".process-item");
+// const contents = gsap.utils.toArray(".process-content");
+// const images = gsap.utils.toArray(".process-image");
+// const numbers = gsap.utils.toArray(".step-slide");
+
+// const slideHeight = 180;
+
+// // Initial State
+// gsap.set(contents,{
+//     opacity:.2,
+//     y:60
+// });
+
+// gsap.set(images,{
+//     opacity:0,
+//     scale:.8
+// });
+
+// gsap.set(contents[0],{
+//     opacity:1,
+//     y:0
+// });
+
+// gsap.set(images[0],{
+//     opacity:1,
+//     scale:1
+// });
+
+// numbers[0].style.color="#fff";
+
+// ScrollTrigger.create({
+//     trigger:".process-section",
+//     start:"top top",
+//     end:()=>"+=" + (items.length*1000),
+//     pin:".left-panel",
+//     scrub:true
+// });
+
+// items.forEach((item,index)=>{
+
+//     ScrollTrigger.create({
+
+//         trigger:item,
+
+//         start:"top 30%",
+
+//         end:"bottom 30%",
+
+//         onEnter:()=>{
+
+//             gsap.to(".number-track",{
+//                 y:-(index*slideHeight),
+//                 duration:.6
+//             });
+
+//             gsap.to(contents,{
+//                 opacity:.2,
+//                 y:60,
+//                 duration:.3
+//             });
+
+//             gsap.to(images,{
+//                 opacity:0,
+//                 scale:.8,
+//                 duration:.3
+//             });
+
+//             gsap.to(contents[index],{
+//                 opacity:1,
+//                 y:0,
+//                 duration:.5
+//             });
+
+//             gsap.to(images[index],{
+//                 opacity:1,
+//                 scale:1,
+//                 duration:.5
+//             });
+
+//             numbers.forEach(n=>{
+//                 n.style.color="rgba(255,255,255,.15)";
+//             });
+
+//             numbers[index].style.color="#fff";
+
+//         },
+
+//         onEnterBack:()=>{
+
+//             gsap.to(".number-track",{
+//                 y:-(index*slideHeight),
+//                 duration:.6
+//             });
+
+//             gsap.to(contents,{
+//                 opacity:.2,
+//                 y:60,
+//                 duration:.3
+//             });
+
+//             gsap.to(images,{
+//                 opacity:0,
+//                 scale:.8,
+//                 duration:.3
+//             });
+
+//             gsap.to(contents[index],{
+//                 opacity:1,
+//                 y:0,
+//                 duration:.5
+//             });
+
+//             gsap.to(images[index],{
+//                 opacity:1,
+//                 scale:1,
+//                 duration:.5
+//             });
+
+//             // numbers.forEach(n=>{
+//             //     n.style.color="rgba(255,255,255,.15)";
+//             // });
+
+//             // numbers[index].style.color="#fff";
+//              gsap.to(".number-track",{
+//     y: -(index * slideHeight),
+//     duration: .6,
+//     ease: "power2.out"
+// });
+//         }
+
+//         // markers:true
+
+//     });
+
+// });
+
+
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     const items = gsap.utils.toArray(".process-item");
+//     const contents = gsap.utils.toArray(".process-content");
+//     const images = gsap.utils.toArray(".process-image");
+//     const numbers = gsap.utils.toArray(".step-slide");
+
+//     const numberTrack = document.querySelector(".number-track");
+
+//     // const slideHeight = 180;
+//     const slideHeight = document.querySelector(".step-slide").offsetHeight;
+//     const totalMove = (items.length - 1) * slideHeight;
+
+//     // Initial State
+//     gsap.set(contents, {
+//         opacity: 0.2,
+//         y: 60
+//     });
+
+//     if (images.length) {
+//         gsap.set(images, {
+//             opacity: 0,
+//             scale: 0.85
+//         });
+//     }
+
+//     gsap.set(contents[0], {
+//         opacity: 1,
+//         y: 0
+//     });
+
+//     if (images.length) {
+//         gsap.set(images[0], {
+//             opacity: 1,
+//             scale: 1
+//         });
+//     }
+
+//     numbers.forEach(num => {
+//         num.style.color = "rgba(255,255,255,.15)";
+//     });
+
+//     numbers[0].style.color = "#fff";
+
+//     // Left Panel Pin
+//     ScrollTrigger.create({
+//         trigger: ".process-section",
+//         start: "top top",
+//         end: () => "+=" + (items.length * window.innerHeight),
+//         pin: ".left-panel",
+//         pinSpacing: false
+//     });
+
+//     // Number Scroll
+//     gsap.to(numberTrack, {
+//         y: -totalMove,
+//         ease: "none",
+//         scrollTrigger: {
+//             trigger: ".process-section",
+//             start: "top top",
+//             end: () => "+=" + (items.length * window.innerHeight),
+//             scrub: true,
+//             invalidateOnRefresh: true
+//         }
+//     });
+
+//     // Content Animation
+//     items.forEach((item, index) => {
+
+//         ScrollTrigger.create({
+
+//             trigger: item,
+
+//             start: "top 35%",
+
+//             end: "bottom 35%",
+
+//             onEnter: () => {
+
+//                 gsap.to(contents, {
+//                     opacity: 0.2,
+//                     y: 60,
+//                     duration: 0.35
+//                 });
+
+//                 gsap.to(contents[index], {
+//                     opacity: 1,
+//                     y: 0,
+//                     duration: 0.45
+//                 });
+
+//                 if (images.length) {
+
+//                     gsap.to(images, {
+//                         opacity: 0,
+//                         scale: 0.85,
+//                         duration: 0.35
+//                     });
+
+//                     gsap.to(images[index], {
+//                         opacity: 1,
+//                         scale: 1,
+//                         duration: 0.45
+//                     });
+
+//                 }
+
+//                 numbers.forEach(num => {
+//                     num.style.color = "rgba(255,255,255,.15)";
+//                 });
+
+//                 numbers[index].style.color = "#fff";
+
+//             },
+
+//             onEnterBack: () => {
+
+//                 gsap.to(contents, {
+//                     opacity: 0.2,
+//                     y: 60,
+//                     duration: 0.35
+//                 });
+
+//                 gsap.to(contents[index], {
+//                     opacity: 1,
+//                     y: 0,
+//                     duration: 0.45
+//                 });
+
+//                 if (images.length) {
+
+//                     gsap.to(images, {
+//                         opacity: 0,
+//                         scale: 0.85,
+//                         duration: 0.35
+//                     });
+
+//                     gsap.to(images[index], {
+//                         opacity: 1,
+//                         scale: 1,
+//                         duration: 0.45
+//                     });
+
+//                 }
+
+//                 numbers.forEach(num => {
+//                     num.style.color = "rgba(255,255,255,.15)";
+//                 });
+
+//                 numbers[index].style.color = "#fff";
+
+//             }
+
+//             // markers:true
+
+//         });
+
+//     });
+
+// });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const items = gsap.utils.toArray(".process-item");
+    const contents = gsap.utils.toArray(".process-content");
+    const images = gsap.utils.toArray(".process-image");
+    const numbers = gsap.utils.toArray(".step-slide");
+    const numberTrack = document.querySelector(".number-track");
+
+    const slideHeight = document.querySelector(".step-slide").offsetHeight;
+
+    // Initial State
+    gsap.set(contents, {
+        opacity: 0.2,
+        y: 60
     });
 
-    // Right side panel subtle movement logic
-    tl.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
+    if (images.length) {
+        gsap.set(images, {
+            opacity: 0,
+            scale: 0.85
+        });
+    }
 
-    // Paid Ads view hold gap
-    tl.to({}, { duration: 2 }); 
+    gsap.set(contents[0], {
+        opacity: 1,
+        y: 0
+    });
 
-    // ==========================================
-    // STEP 1: Paid → SEO
-    // ==========================================
+    if (images.length) {
+        gsap.set(images[0], {
+            opacity: 1,
+            scale: 1
+        });
+    }
 
-    // Smoothly close Paid Ads accordion
-    tl.to("#paid-content-accordion", {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.8,
-        // ease: "power2.inOut"
-    }, "s1_close");
+    numbers.forEach(num => {
+        num.style.color = "rgba(255,255,255,.15)";
+    });
 
-    // CROSS-FADE: Paid Ads graphic goes away, SEO graphic appears
-    tl.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
-      .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
+    numbers[0].style.color = "#fff";
 
-    // Nav text color transition
-    tl.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
-      .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
+    // Left Box Pin
+    ScrollTrigger.create({
+        trigger: ".process-section",
+        start: "top top",
+        end: () => "+=" + ((items.length - 1) * window.innerHeight),
+        pin: ".left-panel",
+        pinSpacing: false
+    });
 
-    // Smoothly open SEO accordion
-    tl.to("#seo-content-accordion", {
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible",
-        duration: 0.8,
-        ease: "power2.inOut"
-    }, "s1_close+=0.1");
+    // Each Section Animation
+    // items.forEach((item, index) => {
 
-    // SEO view hold gap
-    tl.to({}, { duration: 2 }); 
+    //     ScrollTrigger.create({
 
-    // ==========================================
-    // STEP 2: SEO → SMM
-    // ==========================================
+    //         trigger: item,
 
-    // Smoothly close SEO accordion
-    tl.to("#seo-content-accordion", {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.8,
-        // ease: "power2.inOut"
-    }, "s2_close");
+    //         start: "top 40%",
+    //         end: "bottom 40%",
 
-    // CROSS-FADE: SEO graphic goes away, SMM graphic appears
-    tl.to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
-      .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
+    //         onEnter: () => {
 
-    // Nav text color transition
-    tl.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
-      .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
+    //             // Number Slide
+    //             gsap.to(numberTrack, {
+    //                 y: -(index * slideHeight),
+    //                 duration: 0.6,
+    //                 ease: "power2.out"
+    //             });
 
-    // Smoothly open SMM accordion
-    tl.to("#smm-content-accordion", {
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible",
-        duration: 0.8,
-        // ease: "power2.inOut"
-    }, "s2_close+=0.1");
+    //             // Content
+    //             gsap.to(contents, {
+    //                 opacity: 0.2,
+    //                 y: 60,
+    //                 duration: 0.3
+    //             });
 
-    // Final state hold gap
-    tl.to({}, { duration: 2 }); 
+    //             gsap.to(contents[index], {
+    //                 opacity: 1,
+    //                 y: 0,
+    //                 duration: 0.4
+    //             });
+
+    //             // Images
+    //             if (images.length) {
+
+    //                 gsap.to(images, {
+    //                     opacity: 0,
+    //                     scale: 0.85,
+    //                     duration: 0.3
+    //                 });
+
+    //                 gsap.to(images[index], {
+    //                     opacity: 1,
+    //                     scale: 1,
+    //                     duration: 0.4
+    //                 });
+
+    //             }
+
+    //             // Active Number Color
+    //             numbers.forEach(num => {
+    //                 num.style.color = "rgba(255,255,255,.15)";
+    //             });
+
+    //             numbers[index].style.color = "#fff";
+
+    //         },
+
+    //         onEnterBack: () => {
+
+    //             gsap.to(numberTrack, {
+    //                 y: -(index * slideHeight),
+    //                 duration: 0.6,
+    //                 ease: "power2.out"
+    //             });
+
+    //             gsap.to(contents, {
+    //                 opacity: 0.2,
+    //                 y: 60,
+    //                 duration: 0.3
+    //             });
+
+    //             gsap.to(contents[index], {
+    //                 opacity: 1,
+    //                 y: 0,
+    //                 duration: 0.4
+    //             });
+
+    //             if (images.length) {
+
+    //                 gsap.to(images, {
+    //                     opacity: 0,
+    //                     scale: 0.85,
+    //                     duration: 0.3
+    //                 });
+
+    //                 gsap.to(images[index], {
+    //                     opacity: 1,
+    //                     scale: 1,
+    //                     duration: 0.4
+    //                 });
+
+    //             }
+
+    //             numbers.forEach(num => {
+    //                 num.style.color = "rgba(255,255,255,.15)";
+    //             });
+
+    //             numbers[index].style.color = "#fff";
+
+    //         }
+
+    //         // markers:true
+
+    //     });
+
+    // });
+
+    items.forEach((item, index) => {
+
+    ScrollTrigger.create({
+
+        trigger: item,
+        start: "top 40%",
+        end: "bottom 40%",
+
+        onEnter: () => {
+
+            // Number Track Animation
+            gsap.to(numberTrack, {
+                y: -(index * slideHeight),
+                duration: 0.7,
+                ease: "power2.inOut",
+
+                onUpdate: () => {
+
+                    const box = document
+                        .querySelector(".step-box")
+                        .getBoundingClientRect();
+
+                    numbers.forEach((num, i) => {
+
+                        const rect = num.getBoundingClientRect();
+
+                        const center = rect.top + rect.height / 2;
+                        const boxCenter = box.top + box.height / 2;
+
+                        const distance = Math.abs(center - boxCenter);
+
+                        // opacity
+                        let opacity = 1 - (distance / slideHeight);
+                        opacity = gsap.utils.clamp(0.15, 1, opacity);
+
+                        gsap.set(num, {
+                            opacity: opacity
+                        });
+
+                    });
+
+                }
+
+            });
+
+            // Active Number Color
+            numbers.forEach(num => {
+                num.style.color = "rgba(255,255,255,.15)";
+            });
+
+            numbers[index].style.color = "#fff";
+
+            // Content
+            gsap.to(contents, {
+                opacity: 0.2,
+                y: 60,
+                duration: 0.3
+            });
+
+            gsap.to(contents[index], {
+                opacity: 1,
+                y: 0,
+                duration: 0.4
+            });
+
+            // Images
+            if (images.length) {
+
+                gsap.to(images, {
+                    opacity: 0,
+                    scale: 0.85,
+                    duration: 0.3
+                });
+
+                gsap.to(images[index], {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4
+                });
+
+            }
+
+        },
+
+        onEnterBack: () => {
+
+            gsap.to(numberTrack, {
+
+                y: -(index * slideHeight),
+                duration: 0.7,
+                ease: "power2.inOut",
+
+                onUpdate: () => {
+
+                    const box = document
+                        .querySelector(".step-box")
+                        .getBoundingClientRect();
+
+                    numbers.forEach((num) => {
+
+                        const rect = num.getBoundingClientRect();
+
+                        const center = rect.top + rect.height / 2;
+                        const boxCenter = box.top + box.height / 2;
+
+                        const distance = Math.abs(center - boxCenter);
+
+                        let opacity = 1 - (distance / slideHeight);
+                        opacity = gsap.utils.clamp(0.15, 1, opacity);
+
+                        gsap.set(num, {
+                            opacity: opacity
+                        });
+
+                    });
+
+                }
+
+            });
+
+            numbers.forEach(num => {
+                num.style.color = "rgba(255,255,255,.15)";
+            });
+
+            numbers[index].style.color = "#fff";
+
+            gsap.to(contents, {
+                opacity: 0.2,
+                y: 60,
+                duration: 0.3
+            });
+
+            gsap.to(contents[index], {
+                opacity: 1,
+                y: 0,
+                duration: 0.4
+            });
+
+            if (images.length) {
+
+                gsap.to(images, {
+                    opacity: 0,
+                    scale: 0.85,
+                    duration: 0.3
+                });
+
+                gsap.to(images[index], {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4
+                });
+
+            }
+
+        }
+
+        // markers:true
+
+    });
+
+});
+
 });
