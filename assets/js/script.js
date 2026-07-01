@@ -117,7 +117,6 @@ var swiper = new Swiper(".partnerSwiper", {
 
 
 // Grapiic Section
-
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -125,20 +124,20 @@ window.addEventListener("DOMContentLoaded", () => {
     gsap.fromTo(".graph-img",
         {
             y: 150,
-            scale: 1.04,
+            scale: 1.09,
             opacity: 1
         },
         {
             y: 0,
             scale: 1,
             opacity: 1,
-            stagger: 0.08,
+            stagger: 1.09,      // 0.08 → 0.02 (faster)
             ease: "none",
             scrollTrigger: {
                 trigger: ".why-choose-section",
-                start: "top 85%",
-                end: "bottom 40%",
-                scrub: true,   // ya scrub: 0.1
+                start: "top 70%",     // jaldi start
+                end: "top 45%",       // chhota scroll distance = fast animation
+                scrub: 0.2,           // 1.2 → 0.2 (bahut fast response)
                 invalidateOnRefresh: true,
                 // markers: true
             }
@@ -146,6 +145,35 @@ window.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// window.addEventListener("DOMContentLoaded", () => {
+
+//     gsap.fromTo(".graph-img",
+//         {
+//             y: 150,
+//             scale: 1.04,
+//             opacity: 1
+//         },
+//         {
+//             y: 0,
+//             scale: 1,
+//             opacity: 1,
+//             stagger: 0.08,
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: ".why-choose-section",
+//                 start: "top 85%",
+//                 end: "bottom 40%",
+//                 scrub:1.2,   // ya scrub: 0.1
+//                 invalidateOnRefresh: true,
+//                 // markers: true
+//             }
+//         }
+//     );
+
+// });
 
 
 
