@@ -27,7 +27,119 @@ var swiper = new Swiper(".partnerSwiper", {
     }
 });
 
-// Grapiic Section
+// Testimonals Section
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    const cards = gsap.utils.toArray(".cards_section .custom-card");
+
+    // First card ko chhodkar sab 40% niche
+    cards.forEach((card, index) => {
+        if (index > 0) {
+            gsap.set(card, {
+                yPercent: 90,
+                scale: 1,
+                opacity: 1
+            });
+        }
+    });
+
+    // const tl = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".testimonial-section",
+    //         pin: ".cards_section",
+    //         start: "top+=50 top",
+    //         end: `+=${cards.length * 300}`,
+    //         scrub: 1,
+    //         pinSpacing: false
+    //     }
+    // });
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".testimonial",
+        pin: ".cards_section",
+        start: "top+=50 top",
+        end: `+=${cards.length * 300}`,
+        scrub: 1,pinSpacing: false,
+        anticipatePin: 1
+    }
+});
+    cards.forEach((card, index) => {
+
+        if (index === cards.length - 1) return;
+
+        tl.to(card, {
+            scale: 0.9,
+            opacity: 0.5,
+            duration: 1
+        })
+        .to(cards[index + 1], {
+            yPercent: 0,
+            duration: 1
+        }, "<");
+
+    });
+
+    ScrollTrigger.refresh();
+
+});
+// gsap.registerPlugin(ScrollTrigger);
+
+// window.addEventListener("DOMContentLoaded", () => {
+
+//     const testimonialCards = gsap.utils.toArray(".cards_section .testimonial-card");
+
+//     // Hide all except first card
+//     testimonialCards.forEach((card, index) => {
+
+//         if (index > 0) {
+//             gsap.set(card, {
+//                 yPercent: 100,
+//                 opacity: 1,
+//                 scale: 1
+//             });
+//         }
+
+//     });
+
+//     const testimonialTimeline = gsap.timeline({
+
+//         scrollTrigger: {
+//             trigger: ".testimonial-section",
+//             pin: ".cards_section",
+//             start: "top top",
+//             end: `+=${testimonialCards.length * 800}`,
+//             scrub: 1,
+//             pinSpacing: true,
+//             anticipatePin: 1,
+//             invalidateOnRefresh: true,
+//             // markers: true
+//         }
+
+//     });
+
+//     testimonialCards.forEach((card, index) => {
+
+//         if (index === testimonialCards.length - 1) return;
+
+//         testimonialTimeline
+//             .to(card, {
+//                 scale: 0.9,
+//                 opacity: 0.5,
+//                 duration: 1
+//             })
+//             .to(testimonialCards[index + 1], {
+//                 yPercent: 0,
+//                 duration: 1
+//             }, "<");
+
+//     });
+
+//     ScrollTrigger.refresh();
+
+// });
 // gsap.registerPlugin(ScrollTrigger);
 
 // const cards = gsap.utils.toArray(".custom-card");
