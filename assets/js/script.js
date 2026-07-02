@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // });
 const tl = gsap.timeline({
     scrollTrigger: {
-        trigger: ".testimonial",
+        trigger: ".testimonial-section",
         pin: ".cards_section",
         start: "top+=50 top",
         end: `+=${cards.length * 300}`,
@@ -292,28 +292,51 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // Card Ecllipse
 
+// gsap.registerPlugin(ScrollTrigger);
+
+// gsap.utils.toArray(".bg-reveal").forEach((bg) => {
+
+//     gsap.fromTo(
+//         bg,
+//         {
+//             clipPath: "ellipse(150% 0% at 50% 0%)"
+//         },
+//         {
+//             clipPath: "ellipse(120% 90% at 50% 0%)",
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: bg.closest(".cs-card"),
+//                 start: "top 85%",
+//                 end: "bottom 40%",
+//                 scrub: true
+//             }
+//         }
+//     );
+
+// });
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.utils.toArray(".bg-reveal").forEach((bg) => {
+// gsap.utils.toArray(".bg-reveal").forEach((bg) => {
+//     gsap.fromTo(
+//         bg,
+//         {
+//             clipPath: "ellipse(150% 0% at 50% 0%)"
+//         },
+//         {
+//             clipPath: "ellipse(150% 150% at 50% 0%)",
+//             ease: "none",
+//             scrollTrigger: {
+//                 trigger: bg.closest(".cs-card"),
+//                 start: "top 90%",  
+//                 end: "bottom 20%", 
+//                 scrub: 1,
+//                 // Isse screen par indicators dikhenge ki scroll kahan touch ho raha hai
+//                 // markers: true 
+//             }
+//         }
+//     );
+// });
 
-    gsap.fromTo(
-        bg,
-        {
-            clipPath: "ellipse(150% 0% at 50% 0%)"
-        },
-        {
-            clipPath: "ellipse(120% 90% at 50% 0%)",
-            ease: "none",
-            scrollTrigger: {
-                trigger: bg.closest(".cs-card"),
-                start: "top 85%",
-                end: "bottom 40%",
-                scrub: true
-            }
-        }
-    );
-
-});
 
 
 
@@ -339,9 +362,75 @@ gsap.utils.toArray(".bg-reveal").forEach((bg) => {
 //     );
 
 // }); 
+// gsap.registerPlugin(ScrollTrigger);
 
+//     // Har .bg-reveal par loop chalayein
+//     gsap.utils.toArray(".bg-reveal").forEach((bg) => {
+//         const card = bg.closest(".cs-card");
 
+//         gsap.fromTo(
+//             bg,
+//             {
+//                 clipPath: "ellipse(150% 0% at 50% 0%)" // Shuruat me background chhupa rahega
+//             },
+//             {
+//                 clipPath: "ellipse(150% 150% at 50% 0%)", // Scroll karne par poora khulega
+//                 ease: "none",
+//                 scrollTrigger: {
+//                     trigger: card,
+//                     scroller: ".scroll-strip", // FIXED: Ab yeh main window ko nahi, balki slider box ke scroll ko track karega
+//                     horizontal: true,          // FIXED: Yeh batata hai ki scroll left-to-right chal raha hai
+//                     start: "left 95%",         // Jab card right side se screen me aaye
+//                     end: "right 20%",          // Jab card left side se screen ke bahar jaye
+//                     scrub: 1                   // Animation smoothly finger/mouse ke sath scroll hogi
+//                 }
+//             }
+//         );
+//     });
 
+// Jab poora page load ho jaye, tabhi code chale
+window.addEventListener("DOMContentLoaded", () => {
+    
+    // Check karein ki kya GSAP load hua hai
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".bg-reveal").forEach((bg) => {
+            const card = bg.closest(".cs-card");
+
+            gsap.fromTo(bg,
+                { clipPath: "ellipse(46.8864% 22.5867% at 50% 0%)" },
+                {
+                    clipPath: "ellipse(150% 150% at 50% 0%)",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",    // Jab card screen me aaye
+                        end: "bottom 30%",   // Jab card screen se jaane lage
+                        scrub: true          // Scroll ke sath smoothly chalega
+                    }
+                }
+            );
+        });
+    } else {
+        // FALLBACK: Agar GSAP load nahi bhi hua, toh normal scroll check karega
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const bg = entry.target.querySelector(".bg-reveal");
+                if (bg) {
+                    if (entry.isIntersecting) {
+                        bg.style.transition = "clip-path 0.8s ease-out";
+                        bg.style.clipPath = "ellipse(150% 150% at 50% 0%)";
+                    } else {
+                        bg.style.clipPath = "ellipse(150% 0% at 50% 0%)";
+                    }
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll(".cs-card").forEach(card => observer.observe(card));
+    }
+});
 
 
 // Adds Section

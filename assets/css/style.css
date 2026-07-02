@@ -737,205 +737,187 @@ ul li{
 /* Data Section End */
 
 /* Section Start */
+/* --- Global Font Setup (Screenshot jaisa clean look dene ke liye) --- */
 
-.scroll-strip {
-      width: 100%;
-      overflow-x: auto;
-      overflow-y: visible;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      /* padding: 40px 32px 80px;   */
-    }
-    .scroll-strip::-webkit-scrollbar { display: none; }
- 
-    .cards-row {
-      display: flex;
-      gap: 14px;
-      width: max-content;
-    }
-
-    .cs-card {
-      position: relative;
-     
-      overflow: visible;
-      display: flex;
-      flex-direction: column;
-      padding: 36px 32px 0;
-    }
- 
-   
-    .cs-card.navy  { background: #0d1f4e; }
-    .cs-card.amber { background: #f5a623; }
-    .cs-card.teal  { background: #19b8be; }
- 
- 
-    .cs-card::after {
-      content: '';
-      position: absolute;
-      
-      left: 0;
-      width: 100%;
-      height: 104px;
-      background: inherit;         
-     
-      z-index: 0;
-    }
- 
-  
-    .brand-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-    /* .brand-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    } */
-    .brand-icon svg { width: 20px; height: 20px; fill: #fff; }
-    .brand-title {
-      font-size: 20px;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: -0.4px;
-      line-height: 1.1;
-    }
-    .brand-sub {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-top: 3px;
-    }
- 
-   
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 16px;
-      margin-bottom: 36px;
-    }
-    .stat-value {
-      font-size: 28px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-    .stat-label {
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      margin-top: 5px;
-    }
- 
-.cs-card{
+.cs-card {
     position: relative;
     overflow: hidden;
-    background: #e9eef5; /* initial background */
+    /* background: #e9eef5;
+    border-radius: 12px;  */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff; /* Sif active hone par text white dikhega */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
 }
 
-/* Animated layer */
-.bg-reveal{
-    position:absolute;
-    inset:0;
-    background:#002A54;
-    z-index:1;
-
-    clip-path: ellipse(150% 5% at 50% 0%);
-}
-/* Keep content above reveal layer */
-/* .cs-card > *:not(.bg-reveal){
+/* --- Brand Header Section --- */
+.brand-header {
     position: relative;
     z-index: 2;
-} */
-
- .card-visual {
-  flex: 1;               
-  display: flex;
-  align-items: flex-end; 
-  justify-content: center;
-  overflow: hidden;
-}
-.card-visual img {
-  width: 100%;
-  height: 600px;
-  
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.cs-card{
+.brand-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    height: 40px; /* Standard icon height */
+}
+
+.brand-icon img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.brand-sub {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Stats Grid Section (2x2 Layout jaisa screenshot me hai) --- */
+.stats-grid {
     position: relative;
-    overflow: hidden;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns grid */
+    gap: 20px 15px;
+    padding: 10px 30px 25px 30px;
+    text-align: center;
 }
 
-.curve-bg{
+.stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color:#fff;
+}
+
+.stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    opacity: 0.75;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* --- Visual Image Container (Bottom layout) --- */
+.card-visual {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    overflow: hidden;
+    margin-top: auto; /* Push visuals to the bottom */
+}
+
+.card-visual img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Maintains proportions based on screenshot */
+    object-fit: contain;
+    display: block;
+}
+
+/* --- Background Clip-Path Reveal Animation Layer --- */
+.bg-reveal {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.12);
     z-index: 1;
-
-    /* Start hidden from top */
-    clip-path: ellipse(150% 0% at 50% 0%);
+    clip-path: ellipse(150% 0% at 50% 0%); /* Initial hidden state */
+    transition: clip-path 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
-/* 
-.cs-card > *:not(.curve-bg){
-    position: relative;
-    z-index: 2;
+
+/* Is class se text color and curve dynamically open honge */
+/* .cs-card.is-visible {
+    color: #ffffff; 
 } */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.cs-card{
-    position:relative;
-    overflow:hidden;
-    background:#e9eef5;
+.cs-card.is-visible .bg-reveal {
+    clip-path: ellipse(150% 150% at 50% 0%);
 }
 
-.bg-reveal{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#002A54;
-    z-index:1;
-
-    clip-path: ellipse(150% 5% at 50% 0%);
+/* Default styling handling for typography color before active state triggers */
+.cs-card:not(.is-visible) .brand-title,
+.cs-card:not(.is-visible) .stat-value {
+    color: #333333;
+}
+.cs-card:not(.is-visible) .brand-sub,
+.cs-card:not(.is-visible) .stat-label {
+    color: #666666;
 }
 
-.brand-header,
-.stats-grid,
-.card-visual{
-    position:relative;
-    z-index:2;
-}
+.cs-card::after {
+    display: none;
+ }
+.scroll-strip {
+            white-space: nowrap;
+            width: 100%;
+        }
+        .cards-row {
+            display: flex;
+            flex-wrap: nowrap; 
+        }
+        .card-visual {
+            flex: 1;              
+            display: flex;
+            align-items: flex-end; 
+            justify-content: center;
+            overflow: hidden;
+        }
+        .card-visual img {
+            width: 100%;
+            height: 600px;
+        }
+        .cs-card {
+            position: relative;
+            overflow: hidden;
+            /* background: #e9eef5; */
+            min-width: 350px; 
+        }
+        .brand-header,
+        .stats-grid,
+        .card-visual {
+            position: relative;
+            z-index: 2;
+        }
+        .cs-card::after {
+            display: none;
+        }
 
-.cs-card::after{
-    display:none;
-}
+        .bg-reveal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            clip-path: ellipse(150% 0% at 50% 0%); 
+        }
+
+
+  
+
 
 /* Section End */
 /* Color Change Section Start */
@@ -2414,15 +2396,6 @@ ul li{
 /* Why Choose Section End */
 
 /* Teastimonals Section Start */
-
-/* .testimonial-section{
-    min-height:1800px;position: relative;
-}
-.testimonial-section{
-    position: relative;
-    overflow: hidden;
-} */
-
 .cards_section{
     position: relative;
     /* height: 850px; */
@@ -2561,6 +2534,12 @@ ul li{
 .card2{z-index:2;}
 .card3{z-index:3;}
 .card4{z-index:4;}
+
+
+
+
+
+
 
 /* Teastimonals Section End */
 /* Footer Section Start */
