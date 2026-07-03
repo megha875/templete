@@ -700,10 +700,13 @@ ul li{
     overflow:hidden;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
-    /* margin-bottom:20px; */
+  
+        margin-bottom: -10px;
 }
+
+
 .data-section {
-    overflow: hidden; /* Yeh cards ko section se bahar nikalne se rokega */
+    overflow: hidden; 
 }
 
 .stat-card img{

@@ -739,28 +739,146 @@ gsap.registerPlugin(ScrollTrigger);
 // ==========================================
 // DATA SECTION START
 // ==========================================
+// document.addEventListener("DOMContentLoaded", function() {
+  
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // 1. Stat Cards Parallax Timeline
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top 20%",      
+//       end: "bottom 200%",        
+//       scrub: 1.2,               
+//     }
+//   })
+//   .from(".stat-card", {
+   
+//     y: (index) => (index % 2 === 0 ? -60 : 60),
+//     opacity: 1,                 
+//     duration: 1,
+//     ease: "none"                
+//   });
+
+//   // 2. Headings aur Baaki Content Entrance Timeline
+//   const contentTl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top 15%", 
+//       toggleActions: "play none none reverse" 
+//     }
+//   });
+
+//   contentTl.from(".logo-box", {
+//     duration: 1.2,
+//     scale: 0,
+//     opacity: 1,
+//     ease: "back.out(1.5)" 
+//   }, 0)
+//   .from(".main-heading", {
+//     duration: 0.8,
+//     y: 30,
+//     opacity: 1,
+//     stagger: 0.15,
+//     ease: "power2.out"
+//   }, 0.2)
+//   .from(".highlight", {
+//     duration: 0.8,
+//     scale: 0,
+//     opacity: 1, 
+//     // ease: "back.out(1.5)"
+//   }, 0.4)
+//   .from(".sub-text", {
+//     duration: 0.8,
+//     y: -20,     
+//     opacity: 1, 
+//     // ease: "power2.out"
+//   }, 0.5);
+
+// });
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+  
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   // 1. Stat Cards Parallax Timeline (Fixed Trigger Spacing)
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top bottom",    // Jab section ka top view-port ke bottom par aaye
+//       end: "bottom top",      // Jab section ka bottom view-port ke top se bahar nikal jaye
+//       scrub: 1.2,              
+//     }
+//   })
+//   .from(".stat-card", {
+//     // Parallax dynamic movement amount thoda standard kiya taaki overflow na kare
+//     y: (index) => (index % 2 === 0 ? -40 : 40),
+//     duration: 1,
+//     ease: "none"                
+//   });
+
+//   // 2. Headings & Center Logo Entrance Timeline
+//   const contentTl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top 75%", // Viewport me enter hote hi animation chalega smoothly
+//       toggleActions: "play none none reverse" 
+//     }
+//   });
+
+//   contentTl.from(".logo-box", {
+//     duration: 1.2,
+//     scale: 0,
+//     opacity: 0, // 1 se 0 kiya taaki fadeIn effect kaam kare
+//     ease: "back.out(1.5)" 
+//   }, 0)
+//   .from(".main-heading", {
+//     duration: 0.8,
+//     y: 30,
+//     opacity: 0, 
+//     stagger: 0.15,
+//     ease: "power2.out"
+//   }, 0.2)
+//   .from(".highlight", {
+//     duration: 0.8,
+//     scale: 0,
+//     opacity: 0, 
+//     ease: "back.out(1.5)"
+//   }, 0.4)
+//   .from(".sub-text", {
+//     duration: 0.8,
+//     y: 20,     
+//     opacity: 0, 
+//     ease: "power2.out"
+//   }, 0.5);
+
+// });
+
+
 document.addEventListener("DOMContentLoaded", function() {
   
   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Stat Cards Parallax Timeline
+  // 1. Stat Cards Parallax Timeline with 3D Transform
   gsap.timeline({
     scrollTrigger: {
       trigger: ".data-section",
-      start: "top bottom",      
-      end: "bottom top",        
-      scrub: 1.2,               
+      start: "top 190%",    // Jab section view-port ke bottom se enter karega
+      end: "bottom 5%",      // Jab section view-port ke top se bahar nikal jaye
+      scrub: 1,              
     }
   })
   .from(".stat-card", {
-   
-    y: (index) => (index % 2 === 0 ? -60 : 60),
-    opacity: 0,                 
+    // Dynamic Y offset + Inspect element ki 3D Z-index value (20px)
+    y: (index) => (index % 2 === 0 ? -40 : 40),
+    // z: 20,                    // Aapke inspect element ki 3D depth value
+    // force3D: true,            // Isse browser hamesha translate3d() use karega
     duration: 1,
     ease: "none"                
   });
 
-  // 2. Headings aur Baaki Content Entrance Timeline
+  // 2. Headings & Center Logo Entrance Timeline
   const contentTl = gsap.timeline({
     scrollTrigger: {
       trigger: ".data-section",
@@ -772,26 +890,26 @@ document.addEventListener("DOMContentLoaded", function() {
   contentTl.from(".logo-box", {
     duration: 1.2,
     scale: 0,
-    opacity: 1,
+    opacity: 0, 
     ease: "back.out(1.5)" 
   }, 0)
   .from(".main-heading", {
     duration: 0.8,
     y: 30,
-    opacity: 1,
+    opacity: 0, 
     stagger: 0.15,
     ease: "power2.out"
   }, 0.2)
   .from(".highlight", {
     duration: 0.8,
     scale: 0,
-    opacity: 1, 
+    opacity: 0, 
     ease: "back.out(1.5)"
   }, 0.4)
   .from(".sub-text", {
     duration: 0.8,
     y: 20,     
-    opacity: 1, 
+    opacity: 0, 
     ease: "power2.out"
   }, 0.5);
 
@@ -853,8 +971,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Nav colors initial state
-    gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
-    gsap.set("#paid-ads-trigger", { color: "#022d63" });
+    // gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
+    // gsap.set("#paid-ads-trigger", { color: "#022d63" });
 
    
   const animationFlow = gsap.timeline({
@@ -885,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", function () {
     animationFlow.to("#paid-content-accordion", {
         height: 0,
         autoAlpha: 0,
-        duration: 0.8,
+        duration: 0.4,
         // ease: "power2.inOut"
     }, "s1_close");
 
@@ -894,15 +1012,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
 
     // Nav text color transition
-    animationFlow.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
-      .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
+    // animationFlow.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
+    //   .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
 
     // Smoothly open SEO accordion
     animationFlow.to("#seo-content-accordion", {
         height: "auto",
         autoAlpha: 1,
         overflow: "visible",
-        duration: 0.8,
+        duration: 0.4,
         ease: "power2.inOut"
     }, "s1_close+=0.1");
 
@@ -917,7 +1035,7 @@ document.addEventListener("DOMContentLoaded", function () {
     animationFlow.to("#seo-content-accordion", {
         height: 0,
         autoAlpha: 0,
-        duration: 0.8,
+        duration: 0.4,
         // ease: "power2.inOut"
     }, "s2_close");
 
@@ -926,20 +1044,20 @@ document.addEventListener("DOMContentLoaded", function () {
       .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
 
     // Nav text color transition
-    animationFlow.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
-      .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
+    // animationFlow.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
+    //   .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
 
     // Smoothly open SMM accordion
     animationFlow.to("#smm-content-accordion", {
         height: "auto",
         autoAlpha: 1,
         overflow: "visible",
-        duration: 0.8,
+        duration: 0.4,
         // ease: "power2.inOut"
     }, "s2_close+=0.1");
 
     // Final state hold gap
-    animationFlow.to({}, { duration: 2 }); 
+    animationFlow.to({}, { duration: 1}); 
 });
 
 
