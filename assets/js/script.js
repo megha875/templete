@@ -856,64 +856,109 @@ gsap.registerPlugin(ScrollTrigger);
 // });
 
 
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function() {
   
-  gsap.registerPlugin(ScrollTrigger);
+//   gsap.registerPlugin(ScrollTrigger);
 
-  // 1. Stat Cards Parallax Timeline with 3D Transform
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".data-section",
-      start: "top 190%",    // Jab section view-port ke bottom se enter karega
-      end: "bottom 5%",      // Jab section view-port ke top se bahar nikal jaye
-      scrub: 1,              
+//   // 1. Stat Cards Parallax Timeline with 3D Transform
+//   gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top 190%",    // Jab section view-port ke bottom se enter karega
+//       end: "bottom 5%",      // Jab section view-port ke top se bahar nikal jaye
+//       scrub: 1,              
+//     }
+//   })
+//   .from(".stat-card", {
+//     // Dynamic Y offset + Inspect element ki 3D Z-index value (20px)
+//     y: (index) => (index % 2 === 0 ? -40 : 40),
+//     // z: 20,                    // Aapke inspect element ki 3D depth value
+//     // force3D: true,            // Isse browser hamesha translate3d() use karega
+//     duration: 1,
+//     ease: "none"                
+//   });
+
+//   // 2. Headings & Center Logo Entrance Timeline
+//   const contentTl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: ".data-section",
+//       start: "top 75%", 
+//       toggleActions: "play none none reverse" 
+//     }
+//   });
+
+//   contentTl.from(".logo-box", {
+//     duration: 1.2,
+//     scale: 0,
+//     opacity: 0, 
+//     ease: "back.out(1.5)" 
+//   }, 0)
+//   .from(".main-heading", {
+//     duration: 0.8,
+//     y: 30,
+//     opacity: 0, 
+//     stagger: 0.15,
+//     ease: "power2.out"
+//   }, 0.2)
+//   .from(".highlight", {
+//     duration: 0.8,
+//     scale: 0,
+//     opacity: 0, 
+//     ease: "back.out(1.5)"
+//   }, 0.4)
+//   .from(".sub-text", {
+//     duration: 0.8,
+//     y: 20,     
+//     opacity: 0, 
+//     ease: "power2.out"
+//   }, 0.5);
+
+// });
+// GSAP aur ScrollTrigger register karein
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.matchMedia({
+    "(min-width: 992px)": function() {
+        
+        // Ek SINGLE timeline jo poore section ko control karegi
+        const masterTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".data-section",
+                start: "top bottom",  // Jab section screen ke bottom se enter kare
+                end: "bottom top",    // Jab section poora top se bahar nikal jaye
+                scrub: 1.5,           // Extra smoothness (no sudden jerks)
+            }
+        });
+
+        // Step 1: Saare cards UPAR se NEECHE enter karenge apni actual position (0) par
+        masterTl.fromTo([".scroll-up", ".scroll-down"], 
+            { 
+                y: "-120px",          // Starting position: upar hawa me
+                opacity: 1 
+            }, 
+            { 
+                y: "0px",             // Center me aakar rukenge
+                opacity: 1, 
+                duration: 1.9,
+                stagger: 0.05         // Ek ke baad ek card aayega smoothly
+            }
+        )
+        
+        // Step 2: Beech me thoda sa delay (smooth hold) taaki elements ek sath overlap na lagein
+        .to({}, { duration: 0.5 }) 
+
+        // Step 3: Ab saare cards smoothly NEECHE se UPAR ki taraf nikal jayenge (Exit)
+        .to([".scroll-up", ".scroll-down"], 
+            { 
+                y: "-150px",          // Screen se upar exit kar jayenge
+                opacity: 1, 
+                duration: 1.9,
+                stagger: 0.03
+            }
+        );
     }
-  })
-  .from(".stat-card", {
-    // Dynamic Y offset + Inspect element ki 3D Z-index value (20px)
-    y: (index) => (index % 2 === 0 ? -40 : 40),
-    // z: 20,                    // Aapke inspect element ki 3D depth value
-    // force3D: true,            // Isse browser hamesha translate3d() use karega
-    duration: 1,
-    ease: "none"                
-  });
-
-  // 2. Headings & Center Logo Entrance Timeline
-  const contentTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".data-section",
-      start: "top 75%", 
-      toggleActions: "play none none reverse" 
-    }
-  });
-
-  contentTl.from(".logo-box", {
-    duration: 1.2,
-    scale: 0,
-    opacity: 0, 
-    ease: "back.out(1.5)" 
-  }, 0)
-  .from(".main-heading", {
-    duration: 0.8,
-    y: 30,
-    opacity: 0, 
-    stagger: 0.15,
-    ease: "power2.out"
-  }, 0.2)
-  .from(".highlight", {
-    duration: 0.8,
-    scale: 0,
-    opacity: 0, 
-    ease: "back.out(1.5)"
-  }, 0.4)
-  .from(".sub-text", {
-    duration: 0.8,
-    y: 20,     
-    opacity: 0, 
-    ease: "power2.out"
-  }, 0.5);
-
 });
+
 //Add section Start
 
 document.addEventListener("DOMContentLoaded", function () {
