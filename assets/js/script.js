@@ -655,39 +655,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 // Ready Section Start
-
-
-
-gsap.registerPlugin(ScrollTrigger);
+ 
 
         // ============================================
         // GSAP SCROLL ANIMATION - Background Color Change
         // ============================================
         
         // Animate background color from Yellow to Orange+Yellow mix
-        gsap.to("#animatedSection", {
-            background: " linear-gradient(135deg, #FF8C00 0%, #FFD700 50%, #FF6347 100%)" ,
-            ease: "power2.inOut",
-            scrollTrigger: {
-                trigger: "#animatedSection",
-                start: "top 80%",
-                end: "center center",
-                scrub: true,
-            }
-        });
-
-        // Text animation
-        gsap.from(".content-wrapper h1", {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: "#animatedSection",
-                start: "top 70%",
-                toggleActions: "play none none reverse"
-            }
-        });
+       
 
        
 
@@ -961,14 +936,155 @@ ScrollTrigger.matchMedia({
 
 //Add section Start
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
+//     gsap.registerPlugin(ScrollTrigger);
+
+//     // ==========================================
+//     // ALL Clicks Permanently Disable
+//     // ==========================================
+//     // Target the unique trigger buttons
+//     document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
+//         btn.style.pointerEvents = "none";
+//         btn.style.cursor = "default";
+//         btn.removeAttribute("data-bs-toggle");
+//         btn.removeAttribute("data-bs-target");
+//         btn.removeAttribute("href");
+//     });
+
+//     // ==========================================
+//     // Initial Setup
+//     // ==========================================
+//     gsap.set(".tab-content", {
+//         position: "relative",
+//         minHeight: "500px",
+//         overflow: "visible"
+//     });
+
+//     // Ensure all unique graphic panes are stacked but hidden except the first one
+//     gsap.set(".tab-pane-unique", {
+//         position: "absolute",
+//         top: 0, 
+//         left: 0,
+//         width: "100%",
+//         autoAlpha: 0,
+//         display: "block",
+//         overflow: "visible"
+//     });
+
+//     // Initial State: Paid Ads graphic visible, Paid Ads accordion open
+//     gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
+    
+//     gsap.set("#paid-content-accordion", {
+//         display: "block",
+//         height: "auto",
+//         autoAlpha: 1,
+//         overflow: "visible"
+//     });
+
+//     // Accordion setup for others (start closed)
+//     gsap.set("#seo-content-accordion, #smm-content-accordion", {
+//         display: "block",
+//         height: 0,
+//         autoAlpha: 0,
+//         overflow: "visible"
+//     });
+
+//     // Nav colors initial state
+//     // gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
+//     // gsap.set("#paid-ads-trigger", { color: "#022d63" });
+
+   
+//   const animationFlow = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".services-section",
+//         start: "top top",
+//         end: "+=4000",
+//         pin: true,
+//         scrub: 1.9,
+//         invalidateOnRefresh: true
+//     }
+// });
+
+
+
+
+//     // Right side panel subtle movement logic
+//     animationFlow.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
+
+//     // Paid Ads view hold gap
+//     animationFlow.to({}, { duration: 2 }); 
+
+//     // ==========================================
+//     // STEP 1: Paid → SEO
+//     // ==========================================
+
+//     // Smoothly close Paid Ads accordion
+//     animationFlow.to("#paid-content-accordion", {
+//         height: 0,
+//         autoAlpha: 0,
+//         duration: 0.4,
+//         // ease: "power2.inOut"
+//     }, "s1_close");
+
+//     // CROSS-FADE: Paid Ads graphic goes away, SEO graphic appears
+//     animationFlow.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
+//       .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
+
+//     // Nav text color transition
+//     // animationFlow.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
+//     //   .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
+
+//     // Smoothly open SEO accordion
+//     animationFlow.to("#seo-content-accordion", {
+//         height: "auto",
+//         autoAlpha: 1,
+//         overflow: "visible",
+//         duration: 0.4,
+//         ease: "power2.inOut"
+//     }, "s1_close+=0.1");
+
+//     // SEO view hold gap
+//     animationFlow.to({}, { duration: 2 }); 
+
+//     // ==========================================
+//     // STEP 2: SEO → SMM
+//     // ==========================================
+
+//     // Smoothly close SEO accordion
+//     animationFlow.to("#seo-content-accordion", {
+//         height: 0,
+//         autoAlpha: 0,
+//         duration: 0.4,
+//         // ease: "power2.inOut"
+//     }, "s2_close");
+
+//     // CROSS-FADE: SEO graphic goes away, SMM graphic appears
+//     animationFlow.to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
+//       .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
+
+//     // Nav text color transition
+//     // animationFlow.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
+//     //   .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
+
+//     // Smoothly open SMM accordion
+//     animationFlow.to("#smm-content-accordion", {
+//         height: "auto",
+//         autoAlpha: 1,
+//         overflow: "visible",
+//         duration: 0.4,
+//         // ease: "power2.inOut"
+//     }, "s2_close+=0.1");
+
+//     // Final state hold gap
+//     animationFlow.to({}, { duration: 1}); 
+// });
+document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(ScrollTrigger);
 
     // ==========================================
     // ALL Clicks Permanently Disable
     // ==========================================
-    // Target the unique trigger buttons
     document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
         btn.style.pointerEvents = "none";
         btn.style.cursor = "default";
@@ -977,16 +1093,13 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.removeAttribute("href");
     });
 
-    // ==========================================
-    // Initial Setup
-    // ==========================================
+   
     gsap.set(".tab-content", {
         position: "relative",
         minHeight: "500px",
         overflow: "visible"
     });
 
-    // Ensure all unique graphic panes are stacked but hidden except the first one
     gsap.set(".tab-pane-unique", {
         position: "absolute",
         top: 0, 
@@ -997,114 +1110,100 @@ document.addEventListener("DOMContentLoaded", function () {
         overflow: "visible"
     });
 
-    // Initial State: Paid Ads graphic visible, Paid Ads accordion open
+
     gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
+    gsap.set("#paid-content-accordion", { display: "block", height: "auto", autoAlpha: 1 });
+    gsap.set("#seo-content-accordion, #smm-content-accordion", { display: "block", height: 0, autoAlpha: 0 });
+
     
-    gsap.set("#paid-content-accordion", {
-        display: "block",
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible"
+    let mm = gsap.matchMedia();
+
+    mm.add({
+        isDesktop: "(min-width: 992px)",
+        isMobile: "(max-width: 991px)"
+    }, (context) => {
+        let { isDesktop } = context.conditions;
+
+        const animationFlow = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".services-section",
+                start: "top top",
+                end: isDesktop ? "+=4000" : "+=2500", 
+                pin: true,
+                scrub: 1.5,
+                invalidateOnRefresh: true
+            }
+        });
+
+      
+        animationFlow.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
+        animationFlow.to({}, { duration: 2 }); 
+
+        
+        animationFlow.call(() => {
+            document.querySelector("#paid-ads-trigger").classList.remove("active");
+            document.querySelector("#seo-trigger").classList.add("active");
+            document.querySelector("#smm-trigger").classList.remove("active");
+        }, null, "s1_close");
+
+
+        animationFlow.to("#paid-content-accordion", {
+            height: 0,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power1.inOut"
+        }, "s1_close");
+
+        animationFlow.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s1_close")
+                     .to("#seo-graphic", { autoAlpha: 1, duration: 0.6, ease: "power1.inOut" }, "s1_close");
+
+        animationFlow.to("#seo-content-accordion", {
+            height: "auto",
+            autoAlpha: 1,
+            duration: 0.6,
+            ease: "power1.inOut"
+        }, "s1_close+=0.1");
+
+        animationFlow.to({}, { duration: 2 }); 
+
+       
+        
+        animationFlow.call(() => {
+            document.querySelector("#paid-ads-trigger").classList.remove("active");
+            document.querySelector("#seo-trigger").classList.remove("active");
+            document.querySelector("#smm-trigger").classList.add("active");
+        }, null, "s2_close");
+
+         animationFlow.to("#paid-content-accordion", {
+            // height: 0,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power1.inOut"
+        }, "s2_close");
+
+
+        // 2. एकॉर्डियन और ग्राफिक्स क्लोज/ओपन करें
+        animationFlow.to("#seo-content-accordion", {
+            // height: 0,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power1.inOut"
+        }, "s2_close");
+
+        animationFlow .to("#paid-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s2_close")
+                      .to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s2_close")
+                     .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power1.inOut" }, "s2_close");
+
+        animationFlow.to("#smm-content-accordion", {
+            // height: "auto",
+            autoAlpha: 1,
+            duration: 0.6,
+            ease: "power1.inOut"
+        }, "s2_close+=0.1");
+
+        animationFlow.to({}, { duration: 1 }); 
     });
-
-    // Accordion setup for others (start closed)
-    gsap.set("#seo-content-accordion, #smm-content-accordion", {
-        display: "block",
-        height: 0,
-        autoAlpha: 0,
-        overflow: "visible"
-    });
-
-    // Nav colors initial state
-    // gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
-    // gsap.set("#paid-ads-trigger", { color: "#022d63" });
-
-   
-  const animationFlow = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".services-section",
-        start: "top top",
-        end: "+=4000",
-        pin: true,
-        scrub: 1.9,
-        invalidateOnRefresh: true
-    }
 });
-
-
-
-
-    // Right side panel subtle movement logic
-    animationFlow.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
-
-    // Paid Ads view hold gap
-    animationFlow.to({}, { duration: 2 }); 
-
-    // ==========================================
-    // STEP 1: Paid → SEO
-    // ==========================================
-
-    // Smoothly close Paid Ads accordion
-    animationFlow.to("#paid-content-accordion", {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.4,
-        // ease: "power2.inOut"
-    }, "s1_close");
-
-    // CROSS-FADE: Paid Ads graphic goes away, SEO graphic appears
-    animationFlow.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
-      .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
-
-    // Nav text color transition
-    // animationFlow.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
-    //   .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
-
-    // Smoothly open SEO accordion
-    animationFlow.to("#seo-content-accordion", {
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible",
-        duration: 0.4,
-        ease: "power2.inOut"
-    }, "s1_close+=0.1");
-
-    // SEO view hold gap
-    animationFlow.to({}, { duration: 2 }); 
-
-    // ==========================================
-    // STEP 2: SEO → SMM
-    // ==========================================
-
-    // Smoothly close SEO accordion
-    animationFlow.to("#seo-content-accordion", {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.4,
-        // ease: "power2.inOut"
-    }, "s2_close");
-
-    // CROSS-FADE: SEO graphic goes away, SMM graphic appears
-    animationFlow.to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
-      .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
-
-    // Nav text color transition
-    // animationFlow.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
-    //   .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
-
-    // Smoothly open SMM accordion
-    animationFlow.to("#smm-content-accordion", {
-        height: "auto",
-        autoAlpha: 1,
-        overflow: "visible",
-        duration: 0.4,
-        // ease: "power2.inOut"
-    }, "s2_close+=0.1");
-
-    // Final state hold gap
-    animationFlow.to({}, { duration: 1}); 
-});
-
 
 
 
@@ -1862,4 +1961,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+});
+// Color Section Start
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    gsap.fromTo(".cta-section",
+        {
+            y: 30,
+            scale: 1.05,
+            opacity: 1
+        },
+        {
+            y: -230,
+            scale: 1,
+            opacity: 1,
+            // ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".cta-section",
+                // start: "top 5%",
+                end: "top 5%",
+                scrub: 0.8,
+                toggleActions: "play none none reverse"
+            }
+        }
+    );
+
+});
+//   Animtion three Section
+gsap.registerPlugin(ScrollTrigger);
+
+function setupCircleTimeline(circleSelector, iconSelector, cardSelector) {
+    const circle = document.querySelector(circleSelector);
+    const icon = document.querySelector(iconSelector);
+    const card = document.querySelector(cardSelector);
+
+    if (!circle || !icon || !card) return;
+
+    // Circles ki initial setting (Translate clear rakhna starting mein)
+    gsap.set(circle, { x: 0, y: 0, zIndex: 99 });
+
+    // 1. Page ke current scroll ko capture karna taaki absolute calculation ho sake
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+    // 2. Element ke absolute positions (Page ke respect mein, viewport ke nahi)
+    const cRect = circle.getBoundingClientRect();
+    const iRect = icon.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+
+    const circleCenterX = cRect.left + scrollLeft + cRect.width / 2;
+    const circleCenterY = cRect.top + scrollTop + cRect.height / 2;
+
+    const iconCenterX = iRect.left + scrollLeft + iRect.width / 2;
+    const iconCenterY = iRect.top + scrollTop + iRect.height / 2;
+
+    const cardCenterX = cardRect.left + scrollLeft + cardRect.width / 2;
+    const cardCenterY = cardRect.top + scrollTop + cardRect.height / 2;
+
+    // 3. Exact Distance (Jitna circle ko move karna hai)
+    const phase1X = iconCenterX - circleCenterX;
+    const phase1Y = iconCenterY - circleCenterY;
+
+    const phase2X = cardCenterX - circleCenterX;
+    const phase2Y = cardCenterY - circleCenterY;
+
+    // Master Timeline
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".services-section", 
+            start: "top 75%", // Jaise hi section 75% viewport par aaye, animation start ho
+            endTrigger: card,             
+            end: "bottom 25%",            
+            scrub: 1.2, 
+            invalidateOnRefresh: true 
+        }
+    });
+
+    // --- PHASE 1: Circle -> Direct Icon Box Ke Center Mein ---
+    tl.to(circle, {
+        x: phase1X,
+        y: phase1Y,
+        duration: 1.5,
+        ease: "power1.inOut" 
+    });
+
+    // --- MINIMAL PAUSE ---
+    tl.to(circle, { duration: 0.3 });
+
+    // --- PHASE 2: Icon Box -> Final Card Ke Center Mein ---
+    tl.to(circle, {
+        x: phase2X,
+        y: phase2Y,
+        duration: 1.5,
+        ease: "power1.inOut"
+    });
+}
+
+// Layout completely render hone ke baad run hoga
+window.addEventListener("load", () => {
+    // 100ms ka chota sa delay taaki browser coordinates standard position par lock karle
+    setTimeout(() => {
+        setupCircleTimeline(".cicrle_1", "#paid-ads-trigger .icon-box", "#card-first");
+        setupCircleTimeline(".cicrle_2", "#seo-trigger .icon-box", "#card-second");
+        setupCircleTimeline(".cicrle_3", "#smm-trigger .icon-box", "#card-third");
+        
+        ScrollTrigger.refresh();
+    }, 100);
 });
