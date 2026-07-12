@@ -427,7 +427,7 @@ ul li{
 
 
 /* Technology Section End */
-/* Paid Section Start */
+/* Section Start */
 /* .services-section .nav-pills .nav-link{
     display:flex;
     align-items:center;
@@ -539,7 +539,121 @@ ul li{
     overflow: hidden;
     width: 100%;
 } */
+/* Ensure the master section relative placement stays locked */
+.services-section {
+    position: relative;
+    width: 100%;
+}
 
+/* Icon box layout setup */
+.icon-box {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border: 2px dashed #d2d2d2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* circle animation layout break hone se bachaega */
+}
+
+/* Content Lists Toggling Transitions */
+.acc-content {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    padding-left: 95px;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Jab active class milegi tabhi open hoga aur smoothly bada hoga */
+.acc-content.active {
+    display: block !important;
+    opacity: 1;
+    max-height: 500px; /* arbitrary high value for standard animation */
+}
+
+.acc-content .mobile-list li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+.acc-content.active .mobile-list li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tab Layout Image Stack System */
+.tab-content {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.tab-pane-unique {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+}
+
+/* Active tab logic (Baki automatic hide ho jayenge) */
+.tab-pane-unique.show.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1);
+}
+  .services-section {
+        overflow:visible;
+    }
+/* --- WEB DISPLAY RE-ENFORCEMENT --- */
+@media (min-width: 769px) {
+    .services-section {
+        overflow: hidden;
+    }
+}
+
+/* --- MOBILE STATIC REVERT --- */
+@media (max-width: 768px) {
+    .acc-content {
+        display: block !important;
+        opacity: 1 !important;
+        max-height: none !important;
+        padding-left: 20px !important;
+    }
+    .acc-content .mobile-list li {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    .tab-content {
+        height: auto !important;
+    }
+    .tab-pane-unique {
+        position: relative !important;
+        display: none;
+    }
+    #paid-ads-graphic {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
 
 
 
@@ -549,15 +663,32 @@ ul li{
 }
 
 
-.logo-dots span{
-    position:relative;
-    display:block;
-}
+
 
 .services-section{
     position: relative;
 }
+.cicrle_1,
+.cicrle_2,
+.cicrle_3{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    z-index:9999;
+}
 
+.cicrle_1{
+    background:#022D63;
+}
+
+.cicrle_2{
+    background:#FFA106;
+}
+
+.cicrle_3{
+    background:#1DB7D1;
+}
 
 
 #paid-ads-trigger,
@@ -603,25 +734,6 @@ ul li{
     padding:0;
 }
 
-.icon-box{
-    width:75px;
-    height:75px;
-    border:2px dashed #d2d2d2;
-    border-radius:8px;
-    position:relative;
-    flex-shrink:0;
-}
-
-.icon-box::after{
-    content:"";
-    width:45px;
-    height:45px;
-    border-radius:8px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
 
 
 .nav-pills .nav-link.active{
@@ -713,7 +825,6 @@ ul li{
 .mobile-list li {
     opacity: 0;
     transform: translateX(-30px); 
-    animation: slideInLeft 0.5s ease-out forwards;
     
     padding: 10px 0;
     font-size: 18px;
@@ -739,85 +850,8 @@ ul li{
 .mobile-list li:nth-child(6) { animation-delay: 0.6s; }
 .mobile-list li:nth-child(7) { animation-delay: 0.7s; }
 
-/* Paid Section End */
-/* Data Section Start */
-/* .data-section{
-    background:#032d5b;
-    padding:80px 0;
-    overflow:hidden;
-}
-
-.main-heading {
-    color:#fff;
-    text-transform:uppercase;
-    font-weight:600;
-    line-height:1.1;
-    font-size:55px;
-}
-
- .highlight{
-  
-
-    font-size: 85px;
-    font-family: "Covered By Your Grace", cursive;
-    font-weight: 400;
-
-    color: #ffd900;
-   
-       transform: rotate(-20deg);
-    line-height: 0.9;
-    margin-top: -20px;
-  
-    position: relative;
-}
-
-.sub-text{
-    color:#fff;
-    font-size:20px;
-    margin-top:15px;
-}
-
-.stat-card{
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-  
-        margin-bottom: -10px;
-}
 
 
-.data-section {
-    overflow: hidden; 
-}
-
-.stat-card img{
-    
-     width:100%;
-    height:180px; 
-    object-fit:cover;
-    object-position:center;
-    display:block;
-}
-
-
-.logo-box{
-        padding-top: 141px;
-    padding-bottom: 69px;
-    background:#fff;
-    border-radius:15px;
-   
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:40px;
-}
-
-.logo-box img{
-    max-width:180px;
-   
-} */
 .data-section {
     background: #032d5b;
     padding: 100px 0; /* Padding thoda badhaya taaki movement ke liye space mile */
@@ -867,25 +901,14 @@ ul li{
     display: block;
 }
 
-.logo-box {
-    padding-top: 141px;
-    padding-bottom: 69px;
-    background: #fff;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.logo-box img {
-    max-width: 180px;
-}
 
 
 .logo-box img {
     max-width: 180px;
 }
+
+
+
 
 
 .logo-box{
@@ -897,63 +920,74 @@ ul li{
     align-items:center;
 }
 
-.logo-wrapper{
-    position:relative;
-    display:inline-block;
-}
+
 
 .logo-wrapper img{
     width:180px;
     display:block;
 }
-
-.logo-dots{
-    position:absolute;
-    left:50%;
-    bottom:-55px;      /* Image ke niche */
-    transform:translateX(-50%);
-    display:flex;
-    gap:12px;
-}
-
-.logo-dots span{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    display:block;
-}
-
-.cicrle_1{
+/* .logo-dots .circle_1{
     background:#022D63;
 }
 
-.cicrle_2{
+.logo-dots .circle_2{
     background:#FFA106;
 }
 
-.cicrle_3{
+.logo-dots .circle_3{
     background:#1DB7D1;
 }
+ */
 
-/* Circles initialization settings */
-.cicrle_1, .cicrle_2, .cicrle_3 {
-    pointer-events: none; /* Scroll integration standard guidelines */
-    transition: none !important; /* CSS standard triggers avoid check */
+.logo-wrapper {
+    position: relative;
 }
 
-/* Data Section End */
+.logo-dots {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
 
-/* Section Start */
+.logo-dots span {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: block;
+}
 
-/* --- Global Font Setup (Screenshot jaisa clean look dene ke liye) --- */
+.logo-dots .circle_1 { background: #022D63; }
+.logo-dots .circle_2 { background: #FFA106; }
+.logo-dots .circle_3 { background: #1DB7D1; }
+
+.traveling-dot {
+    border-radius: 50%;
+}
+
+
+.paid::before,
+.seo::before,
+.smm::before {
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.icon-box.dot-landed::before {
+    opacity: 1;
+    top: 14px;
+}
+
+
+
 
 .cs-card {
     position: relative;
     overflow: hidden;
-    /* background: #e9eef5;
-    border-radius: 12px;  */
+    
     font-family: 'Poppins', sans-serif;
-    color: #ffffff; /* Sif active hone par text white dikhega */
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     height: 100%;
 }

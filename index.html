@@ -1,238 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="stylesheet" href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="path/to/MotionPathPlugin.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script> -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-<!--Navbar Section Start-->
-<section class="navbar_section bg-darkblue">
-<nav class="navbar  ">
-  <div class="container d-flex align-items-center justify-content-between">
+    <!--Navbar Section Start-->
+    <section class="navbar_section bg-darkblue">
+        <nav class="navbar  ">
+            <div class="container d-flex align-items-center justify-content-between">
 
-  
-    <a class="navbar-brand m-0" href="#">
-      <img src="./assets/img/white_logo.webp" class="nav-logo" alt="Logo">
-    </a>
 
-     <ul>
+                <a class="navbar-brand m-0" href="#">
+                    <img src="./assets/img/white_logo.webp" class="nav-logo" alt="Logo">
+                </a>
+
+                <ul>
                     <li class="nav-item ms-lg-3">
-                    <a href="tel:+919876543210"
-                       class="text-white ">
-                     +91 98765 43210
-                    </a>
-                </li>
-            </ul>
+                        <a href="tel:+919876543210" class="text-white ">
+                            +91 98765 43210
+                        </a>
+                    </li>
+                </ul>
 
-
-  </div>
-</nav>
-
-<div class="banner_section py-5">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <!-- Left Content -->
-            <div class="col-lg-6">
-
-                <span class="text-uppercase text-white text-decoration-underline">
-                    MAXIMISE YOUR BUSINESS GROWTH WITH,
-                </span>
-
-                <h3 class="marketing position-relative">
-                    India's Top <br>
-                    Digital Marketing <br>
-                    Agency
-
-                    <svg class="curve" viewBox="0 0 300 50">
-                        <path d="M10 40 Q150 5 290 40"
-                              stroke="#f4a300"
-                              stroke-width="3"
-                              fill="none"
-                              stroke-linecap="round" />
-                    </svg>
-                </h3>
-
-                <p class="text-white">
-                    Armed with AI-driven strategies and a sharp data-first mindset,
-                    we tackle the toughest challenges in the digital marketing arena.
-                </p>
-
-                <!-- Stats -->
-                <div class="row stats-row mt-5">
-
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-center gap-3 text-white">
-                            <div>
-                                <h4 class="mb-0 fw-bold">80+</h4>
-                                <p class="mb-0">
-                                    Industry Awards Won
-                                </p>
-                            </div>
-
-                            <img src="./assets/img/trophy.webp"
-                                 class="stat-icon"
-                                 alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="d-flex align-items-center gap-3 text-white">
-                            <div>
-                                <h4 class="mb-0 fw-bold">700+</h4>
-                                <p class="mb-0">
-                                    Brands Served Across the Globe
-                                </p>
-                            </div>
-
-                            <img src="./assets/img/internet-1.webp"
-                                 class="stat-icon"
-                                 alt="">
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
+        </nav>
 
-            <!-- Right Form -->
-            <div class="col-lg-6">
+        <div class="banner_section py-5">
+            <div class="container">
+                <div class="row align-items-center">
 
-                <div class="right_text bg-white p-4 rounded-5 shadow">
+                    <!-- Left Content -->
+                    <div class="col-lg-6">
 
-                    <h4 class="text-blue fw-bold text-left mb-2">
-                        Ready to Grow? Let's Start With a Conversation.
-                    </h4>
+                        <span class="text-uppercase text-white text-decoration-underline">
+                            MAXIMISE YOUR BUSINESS GROWTH WITH,
+                        </span>
 
-                    <p class="  para_form text-left text-lightblue  mb-4">
-                        Growth is Closer Than You Think. Let's Talk.
-                    </p>
+                        <h3 class="marketing position-relative">
+                            India's Top <br>
+                            Digital Marketing <br>
+                            Agency
 
-                    <div class="row g-3">
+                            <svg class="curve" viewBox="0 0 300 50">
+                                <path d="M10 40 Q150 5 290 40" stroke="#f4a300" stroke-width="3" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </h3>
 
-                        <div class="col-md-6">
-                            <input type="text"
-                                   class="form-control"
-                                   placeholder="First Name">
-                        </div>
+                        <p class="text-white">
+                            Armed with AI-driven strategies and a sharp data-first mindset,
+                            we tackle the toughest challenges in the digital marketing arena.
+                        </p>
 
-                        
+                        <!-- Stats -->
+                        <div class="row stats-row mt-5">
 
-                        <div class="col-md-6">
-                            <input type="email"
-                                   class="form-control"
-                                   placeholder="Email Address">
-                        </div>
-                         <div class="col-6">
-                            <input type="tel"
-                                   class="form-control"
-                                   placeholder="Phone Number">
-                        </div>
-                        <div class="col-6">
-                            <select class="form-select">
-                                <option selected>Destination</option>
-                                <option>USA</option>
-                                <option>Canada</option>
-                                <option>UK</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center gap-3 text-white">
+                                    <div>
+                                        <h4 class="mb-0 fw-bold">80+</h4>
+                                        <p class="mb-0">
+                                            Industry Awards Won
+                                        </p>
+                                    </div>
 
-                    <div class="dropdown w-100">
+                                    <img src="./assets/img/trophy.webp" class="stat-icon" alt="">
+                                </div>
+                            </div>
 
-    <button class="btn btn-light border w-100 d-flex justify-content-between align-items-center destination-btn"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center gap-3 text-white">
+                                    <div>
+                                        <h4 class="mb-0 fw-bold">700+</h4>
+                                        <p class="mb-0">
+                                            Brands Served Across the Globe
+                                        </p>
+                                    </div>
 
-        <span>Select Destination</span>
-
-        <i class="fa-solid fa-chevron-down"></i>
-
-    </button>
-
-    <ul class="dropdown-menu w-100 destination-menu">
-        <li><a class="dropdown-item" href="#">USA</a></li>
-        <li><a class="dropdown-item" href="#">Canada</a></li>
-        <li><a class="dropdown-item" href="#">UK</a></li>
-        <li><a class="dropdown-item" href="#">Australia</a></li>
-        <li><a class="dropdown-item" href="#">Germany</a></li>
-        <li><a class="dropdown-item" href="#">France</a></li>
-        <li><a class="dropdown-item" href="#">Ireland</a></li>
-        <li><a class="dropdown-item" href="#">Dubai</a></li>
-        <li><a class="dropdown-item" href="#">Singapore</a></li>
-        <li><a class="dropdown-item" href="#">New Zealand</a></li>
-        <li><a class="dropdown-item" href="#">Italy</a></li>
-        <li><a class="dropdown-item" href="#">Spain</a></li>
-    </ul>
-
-</div>
-
-
+                                    <img src="./assets/img/internet-1.webp" class="stat-icon" alt="">
+                                </div>
+                            </div>
 
                         </div>
 
-                        <div class="col-12">
-                            <textarea class="form-control"
-                                      rows="3"
-                                      placeholder="Message"></textarea>
-                        </div>
+                    </div>
 
-                        <div class="col-12">
-                            <button class="btn_form  w-100 py-2">
-                                Requerst a Free Counselling
-                            </button>
+                    <!-- Right Form -->
+                    <div class="col-lg-6">
+
+                        <div class="right_text bg-white p-4 rounded-5 shadow">
+
+                            <h4 class="text-blue fw-bold text-left mb-2">
+                                Ready to Grow? Let's Start With a Conversation.
+                            </h4>
+
+                            <p class="  para_form text-left text-lightblue  mb-4">
+                                Growth is Closer Than You Think. Let's Talk.
+                            </p>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email Address">
+                                </div>
+                                <div class="col-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number">
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>Destination</option>
+                                        <option>USA</option>
+                                        <option>Canada</option>
+                                        <option>UK</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+
+                                    <div class="dropdown w-100">
+
+                                        <button
+                                            class="btn btn-light border w-100 d-flex justify-content-between align-items-center destination-btn"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                            <span>Select Destination</span>
+
+                                            <i class="fa-solid fa-chevron-down"></i>
+
+                                        </button>
+
+                                        <ul class="dropdown-menu w-100 destination-menu">
+                                            <li><a class="dropdown-item" href="#">USA</a></li>
+                                            <li><a class="dropdown-item" href="#">Canada</a></li>
+                                            <li><a class="dropdown-item" href="#">UK</a></li>
+                                            <li><a class="dropdown-item" href="#">Australia</a></li>
+                                            <li><a class="dropdown-item" href="#">Germany</a></li>
+                                            <li><a class="dropdown-item" href="#">France</a></li>
+                                            <li><a class="dropdown-item" href="#">Ireland</a></li>
+                                            <li><a class="dropdown-item" href="#">Dubai</a></li>
+                                            <li><a class="dropdown-item" href="#">Singapore</a></li>
+                                            <li><a class="dropdown-item" href="#">New Zealand</a></li>
+                                            <li><a class="dropdown-item" href="#">Italy</a></li>
+                                            <li><a class="dropdown-item" href="#">Spain</a></li>
+                                        </ul>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn_form  w-100 py-2">
+                                        Requerst a Free Counselling
+                                    </button>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
 
                 </div>
+            </div>
+        </div>
+        </div>
+        </div>
 
+        </div>
+
+
+    </section>
+
+    <!--Navbar Section End-->
+
+    <!--Trusted Section Start-->
+    <section class="trusted-section">
+        <div class="container">
+
+            <!-- Stars -->
+            <div class="stars">
+                ★★★★★
             </div>
 
-        </div>
-    </div>
-</div>       
-</div>        
-    </div>
-   
-</div>  
+            <!-- Heading -->
+            <h5 class="trusted-title">
+                Trusted by Global Brands
+            </h5>
 
-
-</section>
-
-<!--Navbar Section End-->
-
-<!--Trusted Section Start-->
-<section class="trusted-section">
-    <div class="container">
-
-        <!-- Stars -->
-        <div class="stars">
-            ★★★★★
-        </div>
-
-        <!-- Heading -->
-        <h5 class="trusted-title">
-            Trusted by Global Brands
-        </h5>
-
-        <!-- Logos -->
-        <!-- <div class="row justify-content-center align-items-center g-4">
+            <!-- Logos -->
+            <!-- <div class="row justify-content-center align-items-center g-4">
             <div class="col-6 col-md-2 text-center">
                 <img src="./assets/img/aditya-birla.webp" class="brand-logo img-fluid" alt="brand_logo">
             </div>
@@ -262,70 +248,67 @@
                 <img src="./assets/img/oyo.webp" class="brand-logo img-fluid" alt="brand_logo"">
             </div>
         </div> -->
-          <div class="d-flex justify-content-between align-items-center flex-nowrap overflow-auto">
-            <img src="./assets/img/aditya-birla.webp" class="img-fluid" alt="brand_logo">
-            
-            <img src="./assets/img/max.webp" class="img-fluid" alt="brand_logo">
-                        <img src="./assets/img/tata.webp" class="img-fluid"  alt="brand_logo">
+            <div class="d-flex justify-content-between align-items-center flex-nowrap overflow-auto">
+                <img src="./assets/img/aditya-birla.webp" class="img-fluid" alt="brand_logo">
 
-            <img src="./assets/img/hero.webp" class="img-fluid"  alt="brand_logo">
-            <img src="./assets/img/shl.webp" class="img-fluid"  alt="brand_logo">
-            <img src="./assets/img/housing.webp" class="img-fluid" alt="brand_logo">
-            <img src="./assets/img/oyo.webp" class="img-fluid"  alt="brand_logo">
+                <img src="./assets/img/max.webp" class="img-fluid" alt="brand_logo">
+                <img src="./assets/img/tata.webp" class="img-fluid" alt="brand_logo">
+
+                <img src="./assets/img/hero.webp" class="img-fluid" alt="brand_logo">
+                <img src="./assets/img/shl.webp" class="img-fluid" alt="brand_logo">
+                <img src="./assets/img/housing.webp" class="img-fluid" alt="brand_logo">
+                <img src="./assets/img/oyo.webp" class="img-fluid" alt="brand_logo">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
-<!--Trusted Section End-->
-<!--Technology Section Start-->
+    <!--Trusted Section End-->
+    <!--Technology Section Start-->
 
-<div class="technology-section">
-    <div class="container">
-        <div class="row align-items-center gy-5">
+    <div class="technology-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
 
-            <div class="col-lg-6">
-                 <h3 class="main-title">
-                    We are a creative bold 
-                     <span class="curve-path">agency
-                         <svg class="curve" viewBox="0 0 300 50">
-                        <path d="M10 40 Q150 5 290 40"
-                              stroke="#f4a300"
-                              stroke-width="3"
-                              fill="none"
-                              stroke-linecap="round" />
-                    </svg>
-                     </span> backed by
-                    <span class="highlight-text">technology</span>.
-                </h3> 
+                <div class="col-lg-6">
+                    <h3 class="main-title">
+                        We are a creative bold
+                        <span class="curve-path">agency
+                            <svg class="curve" viewBox="0 0 300 50">
+                                <path d="M10 40 Q150 5 290 40" stroke="#f4a300" stroke-width="3" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </span> backed by
+                        <span class="highlight-text">technology</span>.
+                    </h3>
+
+                </div>
+
+
+
+
+                <div class="col-lg-3 text-center">
+                    <h2 class="year-count">20+</h2>
+                </div>
+
+                <div class="col-lg-3">
+                    <h3 class="sub-title">
+                        20+ YEARS OF TURNING STRATEGY INTO REVENUE
+                    </h3>
+
+                    <p class="description">
+                        We combine creativity with hard data to deliver
+                        digital and design solutions that don't just look
+                        good but perform even better.
+                    </p>
+                </div>
+
+
+
 
             </div>
-
-           
-               
-
-                    <div class="col-lg-3 text-center">
-                        <h2 class="year-count">20+</h2>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <h3 class="sub-title">
-                            20+ YEARS OF TURNING STRATEGY INTO REVENUE
-                        </h3>
-
-                        <p class="description">
-                            We combine creativity with hard data to deliver
-                            digital and design solutions that don't just look
-                            good but perform even better.
-                        </p>
-                    </div>
-
-               
-           
-
-        </div>
-             <!-- <div class="row">
+            <!-- <div class="row">
         <div class="col-4">
 
             <ul class="stat-box list-unstyled mb-0">
@@ -369,291 +352,336 @@
         </div>
     </div>
         -->
-         <div class="container py-5">
-    <div class="row g-4">
+            <div class="container py-5">
+                <div class="row g-4">
 
-        <!-- Item 1 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="stat-box">
-                <div class="stat-content">
-                    <span class="stat-number">80%</span>
-                    <span class="stat-text">Client Retention Rate</span>
-                </div>
-                <img src="./assets/img/handshake.webp" alt="">
-            </div>
-        </div>
+                    <!-- Item 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <span class="stat-number">80%</span>
+                                <span class="stat-text">Client Retention Rate</span>
+                            </div>
+                            <img src="./assets/img/handshake.webp" alt="">
+                        </div>
+                    </div>
 
-        <!-- Item 2 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="stat-box">
-                <div class="stat-content">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-text">Strong & Growing <br>Team</span>
-                </div>
-                <img src="./assets/img/people.webp" alt="">
-            </div>
-        </div>
+                    <!-- Item 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-text">Strong & Growing <br>Team</span>
+                            </div>
+                            <img src="./assets/img/people.webp" alt="">
+                        </div>
+                    </div>
 
-        <!-- Item 3 -->
-        <div class="col-lg-4 col-md-6  ps-4">
-            <div class="stat-box">
-                <div class="stat-content">
-                    <span class="stat-number">50+</span>
-                    <span class="stat-text">Industries Served</span>
-                </div>
-                <img src="./assets/img/office-building.webp" alt="">
-            </div>
-        </div>
+                    <!-- Item 3 -->
+                    <div class="col-lg-4 col-md-6  ps-4">
+                        <div class="stat-box">
+                            <div class="stat-content">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-text">Industries Served</span>
+                            </div>
+                            <img src="./assets/img/office-building.webp" alt="">
+                        </div>
+                    </div>
 
-    </div>
-</div>
-        </div>
-    </div>
-</div>
-
-<!--Technology Section End-->
-<!-- Data Section Start-->
- <section class="data-section">
-    <div class="container">
-
-        <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-8">
-                <span class="main-heading">DATA THAT TURNS</span>
-                <br>
-                <span class="highlight">Insight</span>
-                <span class="main-heading">INTO REAL REVENUE.</span>
-                <p class="sub-text">Every campaign we run lives and breathes through data.</p>
-            </div>
-        </div>
-
-        <div class="row align-items-center cards-container">
-
-            <div class="col-lg-2 scroll-up">
-                <div class="stat-card">
-                    <img src="./assets/img/2-1.webp" alt="logo">
-                </div>
-                <div class="stat-card">
-                    <img src="./assets/img/5-1.webp" alt="logo">
                 </div>
             </div>
-
-            <div class="col-lg-2 scroll-down">
-                <div class="stat-card">
-                    <img src="./assets/img/6-1.webp" alt="logo">
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-               
-     
-<div class="logo-box">
-
-    <div class="logo-wrapper">
-
-        <img src="./assets/img/nians_logo.webp" alt="Logo">
-
-        <div class="logo-dots">
-            <span class="cicrle_1"></span>
-            <span class="cicrle_2"></span>
-            <span class="cicrle_3"></span>
-        </div>
-
-    </div>
-
-</div>
-            </div>
-
-            <!-- Middle Right (Moving Down) -->
-            <div class="col-lg-2 scroll-down">
-                <div class="stat-card">
-                    <img src="./assets/img/3-1.webp" alt="logo">
-                </div>
-            </div>
-
-            <!-- Right Stats (Moving Up) -->
-            <div class="col-lg-2 scroll-up">
-                <div class="stat-card">
-                    <img src="./assets/img/1-1.webp" alt="logo">
-                </div>
-                <div class="stat-card">
-                    <img src="./assets/img/4-1.webp" alt="logo">
-                </div>
-            </div>
-
         </div>
     </div>
-</section>
-
- <!-- Data Section End-->
-<!-- Paid Section Section-->
-
-<section class="services-section py-5">
-    <div class="container">
-        <div class="row align-items-center">
-
-            <div class="col-lg-5">
-                <div class="nav flex-column nav-pills" id="service-tab">
-
-                    <button class="nav-link" id="paid-ads-trigger">
-                        <span class="icon-box paid"></span>
-                        
-                        Paid Ads
-                    </button>
-
-                    <div class="acc-content " id="paid-content-accordion">
-                        <ul class="mobile-list">
-                            <li>UGC Marketing</li>
-                            <li>Meme & Trend Marketing</li>
-                            <li>ORM</li>
-                            <li>Automation</li>
-                            <li>Organic Marketing</li>
-                            <li>Influencer Marketing</li>
-                        </ul>
-                    </div>
-
-                    <button class="nav-link" id="seo-trigger">
-                        <span class="icon-box seo"></span>
-                        SEO
-                    </button>
-
-                    <div class="acc-content" id="seo-content-accordion">
-                        <ul class="mobile-list">
-                            <li>Keyword Research</li>
-                            <li>On Page SEO</li>
-                            <li>Technical SEO</li>
-                            <li>Link Building</li>
-                        </ul>
-                    </div>
-
-                    <button class="nav-link" id="smm-trigger">
-                        <span class="icon-box smm"></span>
-                        SMM
-                    </button>
-
-                    <div class="acc-content" id="smm-content-accordion">
-                        <ul class="mobile-list">
-                            <li>Facebook Marketing</li>
-                            <li>Instagram Marketing</li>
-                            <li>Influencer Marketing</li>
-                            <li>ORM</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-7">
-                <div class="tab-content">
-                    
-                    <div class="tab-pane-unique fade show active" id="paid-ads-graphic">
-                        <dotlottie-player src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/03/dm.lottie" speed="1" loop autoplay class="mx-auto d-block mobile-lottie"></dotlottie-player>
-                    </div>
-
-                    <div class="tab-pane-unique fade" id="seo-graphic">
-                        <dotlottie-player src="https://nians.com/wp-content/uploads/2021/09/20210917-070813lf30_editor_76wddxby-1.lottie" background="transparent" speed="1" class="mx-auto d-block mobile-lottie" style="width: 80%;" loop autoplay loading="lazy"></dotlottie-player>
-                    </div>
-
-                    <div class="tab-pane-unique fade" id="smm-graphic">
-                        <dotlottie-player src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/03/smm.lottie" speed="1" loop autoplay class="mx-auto d-block mobile-lottie"></dotlottie-player>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
     </div>
-</section>
- 
- <!--Paid Section End--->
+
+    <!--Technology Section End-->
+    <!-- Data Section Start-->
+    <section class="data-section">
+        <div class="container">
+
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="main-heading">DATA THAT TURNS</span>
+                    <br>
+                    <span class="highlight">Insight</span>
+                    <span class="main-heading">INTO REAL REVENUE.</span>
+                    <p class="sub-text">Every campaign we run lives and breathes through data.</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center cards-container">
+
+                <div class="col-lg-2 scroll-up">
+                    <div class="stat-card">
+                        <img src="./assets/img/2-1.webp" alt="logo">
+                    </div>
+                    <div class="stat-card">
+                        <img src="./assets/img/5-1.webp" alt="logo">
+                    </div>
+                </div>
+
+                <div class="col-lg-2 scroll-down">
+                    <div class="stat-card">
+                        <img src="./assets/img/6-1.webp" alt="logo">
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
 
 
- 
-  <!-- Scroll Card Section Satrt-->
-     <div class="scroll-strip pb-2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="cards-row">
-                
-                <div class="col-lg-4 col-md-6 px-2">
-                    <div id="card-first">
-                    <div class="cs-card">
-                        <div class="bg-reveal" style="background:#002A54;"></div>
-                        <div class="brand-header">
-                            <div class="brand-icon"></div>
-                            <div>
-                                <div class="brand-title text-white">JKMaxx Paints</div>
-                                <div class="brand-sub text-white">Campaign Results</div>
+                    <div class="logo-box">
+
+                        <div class="logo-wrapper">
+
+                            <img src="./assets/img/nians_logo.webp" alt="Logo">
+
+                            <div class="logo-dots">
+                                <span class="circle_1"></span>
+                                <span class="circle_2"></span>
+                                <span class="circle_3"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Floating Circles for Animation -->
+                    <div class="floating-circle circle_1"></div>
+                    <div class="floating-circle circle_2"></div>
+                    <div class="floating-circle circle_3"></div>
+                </div>
+
+                <!-- Middle Right (Moving Down) -->
+                <div class="col-lg-2 scroll-down">
+                    <div class="stat-card">
+                        <img src="./assets/img/3-1.webp" alt="logo">
+                    </div>
+                </div>
+
+                <!-- Right Stats (Moving Up) -->
+                <div class="col-lg-2 scroll-up">
+                    <div class="stat-card">
+                        <img src="./assets/img/1-1.webp" alt="logo">
+                    </div>
+                    <div class="stat-card">
+                        <img src="./assets/img/4-1.webp" alt="logo">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-5">
+                    <div class="nav flex-column nav-pills" id="service-tab">
+
+                        <button class="nav-link" id="paid-ads-trigger">
+                            <span class="icon-box paid"></span>
+
+                            Paid Ads
+                        </button>
+
+                        <div class="acc-content " id="paid-content-accordion">
+                            <ul class="mobile-list">
+                                <li>UGC Marketing</li>
+                                <li>Meme & Trend Marketing</li>
+                                <li>ORM</li>
+                                <li>Automation</li>
+                                <li>Organic Marketing</li>
+                                <li>Influencer Marketing</li>
+                            </ul>
+                        </div>
+
+                        <button class="nav-link" id="seo-trigger">
+                            <span class="icon-box seo"></span>
+                            SEO
+                        </button>
+
+                        <div class="acc-content" id="seo-content-accordion">
+                            <ul class="mobile-list">
+                                <li>Keyword Research</li>
+                                <li>On Page SEO</li>
+                                <li>Technical SEO</li>
+                                <li>Link Building</li>
+                            </ul>
+                        </div>
+
+                        <button class="nav-link" id="smm-trigger">
+                            <span class="icon-box smm"></span>
+                            SMM
+                        </button>
+
+                        <div class="acc-content" id="smm-content-accordion">
+                            <ul class="mobile-list">
+                                <li>Facebook Marketing</li>
+                                <li>Instagram Marketing</li>
+                                <li>Influencer Marketing</li>
+                                <li>ORM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="tab-content">
+
+                        <div class="tab-pane-unique fade show active" id="paid-ads-graphic">
+                            <dotlottie-player
+                                src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/03/dm.lottie"
+                                speed="1" loop autoplay class="mx-auto d-block mobile-lottie"></dotlottie-player>
+                        </div>
+
+                        <div class="tab-pane-unique fade" id="seo-graphic">
+                            <dotlottie-player
+                                src="https://nians.com/wp-content/uploads/2021/09/20210917-070813lf30_editor_76wddxby-1.lottie"
+                                background="transparent" speed="1" class="mx-auto d-block mobile-lottie"
+                                style="width: 80%;" loop autoplay loading="lazy"></dotlottie-player>
+                        </div>
+
+                        <div class="tab-pane-unique fade" id="smm-graphic">
+                            <dotlottie-player
+                                src="https://staging-9a67-technianscom.wpcomstaging.com/wp-content/uploads/2026/03/smm.lottie"
+                                speed="1" loop autoplay class="mx-auto d-block mobile-lottie"></dotlottie-player>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="scroll-strip pb-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="cards-row">
+
+                    <div class="col-lg-4 col-md-6 px-2">
+                        <div id="card-first">
+                            <div class="cs-card">
+                                <div class="bg-reveal" style="background:#002A54;"></div>
+                                <div class="brand-header">
+                                    <div class="brand-icon"></div>
+                                    <div>
+                                        <div class="brand-title text-white">JKMaxx Paints</div>
+                                        <div class="brand-sub text-white">Campaign Results</div>
+                                    </div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div>
+                                        <div class="stat-value  text-white">1.17B</div>
+                                        <div class="stat-label text-white">Impressions</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">246M</div>
+                                        <div class="stat-label text-white">Total Reach</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">1B+</div>
+                                        <div class="stat-label text-white">Views</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">5.3M</div>
+                                        <div class="stat-label text-white">Clicks</div>
+                                    </div>
+                                </div>
+                                <div class="card-visual">
+                                    <img src="./assets/img/card1.webp" alt="JK Maxx Paints" />
+                                </div>
                             </div>
                         </div>
-                        <div class="stats-grid">
-                            <div><div class="stat-value  text-white">1.17B</div><div class="stat-label text-white">Impressions</div></div>
-                            <div><div class="stat-value text-white">246M</div><div class="stat-label text-white">Total Reach</div></div>
-                            <div><div class="stat-value text-white">1B+</div><div class="stat-label text-white">Views</div></div>
-                            <div><div class="stat-value text-white">5.3M</div><div class="stat-label text-white">Clicks</div></div>
-                        </div>
-                        <div class="card-visual">
-                            <img src="./assets/img/card1.webp" alt="JK Maxx Paints" />
-                        </div>
                     </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 px-2">
-                    <div id="card-second">
-                    <div class="cs-card">
-                        <div class="bg-reveal" style="background:#FFA106;"></div>
-                        <div class="brand-header">
-                            <div class="brand-icon">
-                                <img src="./assets/img/Artboard-1-1 (1).webp" alt="logo">
+                    <div class="col-lg-4 col-md-6 px-2">
+                        <div id="card-second">
+                            <div class="cs-card">
+                                <div class="bg-reveal" style="background:#FFA106;"></div>
+                                <div class="brand-header">
+                                    <div class="brand-icon">
+                                        <img src="./assets/img/Artboard-1-1 (1).webp" alt="logo">
+                                    </div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div>
+                                        <div class="stat-value text-white">310K+</div>
+                                        <div class="stat-label text-white">App Installs</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">57,554</div>
+                                        <div class="stat-label text-white">Total Bookings</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">3.6M</div>
+                                        <div class="stat-label text-white">Traffic Generated</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">1.3M</div>
+                                        <div class="stat-label text-white">New Users Acquired</div>
+                                    </div>
+                                </div>
+                                <div class="card-visual">
+                                    <img src="assets/img/card2.webp" alt="Freedo x Hero" />
+                                </div>
                             </div>
                         </div>
-                        <div class="stats-grid">
-                            <div><div class="stat-value text-white">310K+</div><div class="stat-label text-white">App Installs</div></div>
-                            <div><div class="stat-value text-white">57,554</div><div class="stat-label text-white">Total Bookings</div></div>
-                            <div><div class="stat-value text-white">3.6M</div><div class="stat-label text-white">Traffic Generated</div></div>
-                            <div><div class="stat-value text-white">1.3M</div><div class="stat-label text-white">New Users Acquired</div></div>
-                        </div>
-                        <div class="card-visual">
-                            <img src="assets/img/card2.webp" alt="Freedo x Hero" />
-                        </div>
                     </div>
-                    </div>
-                </div>
-            
-                <div class="col-lg-4 col-md-6 px-2">
-                    <div id="card-third">
-                    <div class="cs-card">
-                        <div class="bg-reveal" style="background:#19B8BE;"></div>
-                        <div class="brand-header">
-                            <div class="brand-icon" style="width:367px;">
-                                <img src="./assets/img/housing-com-logo (1).webp" alt="logo" style="width:367px;">
+
+                    <div class="col-lg-4 col-md-6 px-2">
+                        <div id="card-third">
+                            <div class="cs-card">
+                                <div class="bg-reveal" style="background:#19B8BE;"></div>
+                                <div class="brand-header">
+                                    <div class="brand-icon" style="width:367px;">
+                                        <img src="./assets/img/housing-com-logo (1).webp" alt="logo"
+                                            style="width:367px;">
+                                    </div>
+                                </div>
+                                <div class="stats-grid">
+                                    <div>
+                                        <div class="stat-value text-white">1653%</div>
+                                        <div class="stat-label text-white">Traffic Increment</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">14K+</div>
+                                        <div class="stat-label text-white">Increase in Backlinks</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">2400+</div>
+                                        <div class="stat-label text-white">Keywords in Top 3</div>
+                                    </div>
+                                    <div>
+                                        <div class="stat-value text-white">5000+</div>
+                                        <div class="stat-label text-white">Keywords in Top 10</div>
+                                    </div>
+                                </div>
+                                <div class="card-visual">
+                                    <img src="./assets/img/card3.webp" alt="Housing.com" />
+                                </div>
                             </div>
                         </div>
-                        <div class="stats-grid">
-                            <div><div class="stat-value text-white">1653%</div><div class="stat-label text-white">Traffic Increment</div></div>
-                            <div><div class="stat-value text-white">14K+</div><div class="stat-label text-white">Increase in Backlinks</div></div>
-                            <div><div class="stat-value text-white">2400+</div><div class="stat-label text-white">Keywords in Top 3</div></div>
-                            <div><div class="stat-value text-white">5000+</div><div class="stat-label text-white">Keywords in Top 10</div></div>
-                        </div>
-                        <div class="card-visual">
-                            <img src="./assets/img/card3.webp" alt="Housing.com" />
-                        </div>
                     </div>
-                </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-   <!--Scroll Card Section Start-->
-   
-   
-<!--Video Section Start-->
+    <!--Scroll Card Section Start-->
 
-<section class="automation-section">
-               <div class="text-center">
+
+    <!--Video Section Start-->
+
+    <section class="automation-section">
+        <div class="text-center">
 
 
             <h2 class="sub-title mb-0">
@@ -662,59 +690,60 @@
 
         </div>
 
-    <div class="automation-wrapper">
-               <dotlottie-player src="https://nians.com/wp-content/uploads/2026/03/integrate.lottie" id="brandLogoLottie" background="transparent" speed="2" class="moscot-1" style="width: 100%;" loop autoplay loading="lazy">
-               </dotlottie-player>
+        <div class="automation-wrapper">
+            <dotlottie-player src="https://nians.com/wp-content/uploads/2026/03/integrate.lottie" id="brandLogoLottie"
+                background="transparent" speed="2" class="moscot-1" style="width: 100%;" loop autoplay loading="lazy">
+            </dotlottie-player>
 
-             
-        <!-- Center Brand -->
-        <div class="brand-box">
-            <img src="assets/img/brand-2.webp" alt="brand_logo">
-            <!-- <h4>Your Brand</h4> -->
+
+            <!-- Center Brand -->
+            <div class="brand-box">
+                <img src="assets/img/brand-2.webp" alt="brand_logo">
+                <!-- <h4>Your Brand</h4> -->
+            </div>
+
+            <!-- Left Top -->
+            <div class="channel-card email-card">
+                <img src="assets/img/mail.webp" alt="img">
+                <span>Email<br>distribution</span>
+            </div>
+
+            <!-- Left Bottom -->
+            <div class="channel-card ads-card">
+                <img src="assets/img/mail.webp" alt="img">
+                <span>Ads</span>
+            </div>
+
+            <!-- Left Middle -->
+            <div class="channel-card social-card">
+                <img src="assets/img/mail.webp" alt="img">
+                <span>Social<br>media</span>
+            </div>
+
+            <!-- Right Top -->
+            <div class="channel-card crm-card">
+                <img src="assets/img/crm.svg" alt="">
+                <span>CRM</span>
+            </div>
+
+            <!-- Right Middle -->
+            <div class="channel-card chatbot-card">
+                <img src="assets/img/chatbot.svg" alt="">
+                <span>Chat bot</span>
+            </div>
+
+            <!-- Right Bottom -->
+            <div class="channel-card ticket-card">
+                <img src="assets/img/ticket.svg" alt="">
+                <span>Tickets<br>operator</span>
+            </div>
+
         </div>
 
-        <!-- Left Top -->
-        <div class="channel-card email-card">
-            <img src="assets/img/mail.webp" alt="img">
-            <span>Email<br>distribution</span>
-        </div>
-
-        <!-- Left Bottom -->
-        <div class="channel-card ads-card">
-            <img src="assets/img/mail.webp" alt="img">
-            <span>Ads</span>
-        </div>
-
-        <!-- Left Middle -->
-        <div class="channel-card social-card">
-            <img src="assets/img/mail.webp" alt="img">
-            <span>Social<br>media</span>
-        </div>
-
-        <!-- Right Top -->
-        <div class="channel-card crm-card">
-            <img src="assets/img/crm.svg" alt="">
-            <span>CRM</span>
-        </div>
-
-        <!-- Right Middle -->
-        <div class="channel-card chatbot-card">
-            <img src="assets/img/chatbot.svg" alt="">
-            <span>Chat bot</span>
-        </div>
-
-        <!-- Right Bottom -->
-        <div class="channel-card ticket-card">
-            <img src="assets/img/ticket.svg" alt="">
-            <span>Tickets<br>operator</span>
-        </div>
-
-    </div>
-
-</section>
-   <!--Video Section End-->
-   <!-- Process Section Start-->
-     <!-- <section class="process-section">
+    </section>
+    <!--Video Section End-->
+    <!-- Process Section Start-->
+    <!-- <section class="process-section">
     <div class="container-fluid px-lg-5">
 
         <h2 class="process-title">Our Process</h2>
@@ -792,7 +821,7 @@
 
     </div>
 </section>  -->
-<!-- 
+    <!-- 
 <section class="process-section">
     <div class="container-fluid px-lg-5">
        
@@ -893,7 +922,7 @@
 </div>
 </div>
 </section> -->
-<!-- <section class="process-section">
+    <!-- <section class="process-section">
     <div class="container-fluid px-lg-5">
         <h2 class="process-title">Our Process</h2>
 
@@ -953,7 +982,7 @@
     </div>
 </section> -->
 
-<!-- <section class="process-section">
+    <!-- <section class="process-section">
     <div class="container-fluid px-lg-5">
         <h2 class="process-title">Our Process</h2>
 
@@ -1012,7 +1041,7 @@
         </div>
     </div>
 </section> -->
-<!-- <section class="process-section">
+    <!-- <section class="process-section">
     <div class="container-fluid px-lg-5">
         <h2 class="process-title">Our Process</h2>
 
@@ -1076,16 +1105,16 @@
 
 
 
-<section class="process-section">
+    <section class="process-section">
 
-    <div class="container-fluid px-lg-5">
+        <div class="container-fluid px-lg-5">
 
-        <div class="row">
+            <div class="row">
 
-            <!-- LEFT -->
-            <div class="col-lg-3">
+                <!-- LEFT -->
+                <div class="col-lg-3">
 
-                <!-- <div class="left-panel">
+                    <!-- <div class="left-panel">
 
                     <div class="step-box">
 
@@ -1100,54 +1129,145 @@
                     </div>
 
                 </div> -->
-                
-                <div class="left-panel">
 
-                    <div class="step-box">
+                    <div class="left-panel">
 
-                        <div class="number-mask"></div>
+                        <div class="step-box">
 
-                    </div>
+                            <div class="number-mask"></div>
 
-                    <div class="number-track">
+                        </div>
 
-                        <div class="step-slide">1</div>
-                        <div class="step-slide">2</div>
-                        <div class="step-slide">3</div>
+                        <div class="number-track">
+
+                            <div class="step-slide">1</div>
+                            <div class="step-slide">2</div>
+                            <div class="step-slide">3</div>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+                <!-- RIGHT -->
+                <div class="col-lg-9">
 
-            <!-- RIGHT -->
-            <div class="col-lg-9">
+                    <div class="process-wrapper">
 
-                <div class="process-wrapper">
+                        <!-- STEP 1 -->
+                        <div class="process-item">
 
-                    <!-- STEP 1 -->
-                    <div class="process-item">
+                            <div class="process-content">
 
-                        <div class="process-content">
+                                <div class="row align-items-center">
 
-                            <div class="row align-items-center">
+                                    <div class="col-lg-9">
 
-                                <div class="col-lg-9">
+                                        <h2>Strategic Discovery</h2>
 
-                                    <h2>Strategic Discovery</h2>
+                                        <p>
+                                            We start by getting under the skin of your business. Through brand workshops
+                                            and business analysis, we identify your strengths, growth opportunities and
+                                            selling points. We then segment your market, map out customer pain points
+                                            and buying behaviour and study the broader competitive landscape to make
+                                            sure every move we make is rooted in reality, not assumptions.
+                                        </p>
 
-                                    <p>
-                                       We start by getting under the skin of your business. Through brand workshops and business analysis, we identify your strengths, growth opportunities and selling points. We then segment your market, map out customer pain points and buying behaviour and study the broader competitive landscape to make sure every move we make is rooted in reality, not assumptions.
-                                    </p>
+                                    </div>
+
+                                    <div class="col-lg-5">
+
+                                        <div class="lottie-box">
+                                            <dotlottie-player
+                                                src="https://nians.com/wp-content/uploads/2026/03/20210908-071511lf30_editor_rwzdclmm-1.lottie"
+                                                speed="1" loop autoplay
+                                                style="width:300px; height:300px;"></dotlottie-player>
+                                        </div>
+
+                                    </div>
 
                                 </div>
 
-                                <div class="col-lg-5">
+                            </div>
 
-                                    <div class="lottie-box">
-                            <dotlottie-player src="https://nians.com/wp-content/uploads/2026/03/20210908-071511lf30_editor_rwzdclmm-1.lottie" speed="1" loop autoplay style="width:300px; height:300px;"></dotlottie-player>
                         </div>
+
+                        <!-- STEP 2 -->
+
+                        <div class="process-item">
+
+                            <div class="process-content">
+
+                                <div class="row align-items-center">
+
+                                    <div class="col-lg-9">
+
+                                        <h2>Growth Blueprint</h2>
+
+                                        <p>
+
+                                            With discovery done, we identify the most profitable channels based on where
+                                            your customers spend their time. Our creative team builds compelling assets
+                                            while we construct a high-converting sales funnel around every stage of your
+                                            customer's journey. Budget is allocated through a data-driven process,
+                                            ensuring every rupee is mapped to both creative impact and performance
+                                            potential.
+
+
+                                        </p>
+
+                                    </div>
+
+                                    <div class="col-lg-5">
+
+                                        <div class="lottie-box">
+                                            <dotlottie-player
+                                                src="https://nians.com/wp-content/uploads/2026/03/20210908-071821lf30_editor_l2vr3l6s-1.lottie"
+                                                speed="1" loop autoplay
+                                                style="width:300px; height:300px;"></dotlottie-player>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- STEP 3 -->
+
+                        <div class="process-item">
+
+                            <div class="process-content">
+
+                                <div class="row align-items-center">
+
+                                    <div class="col-lg-9">
+
+                                        <h2>Execute & Evolve</h2>
+
+                                        <p>
+                                            Once the strategy is signed off, we deploy the right mix of creative
+                                            content, platforms and tools to launch campaigns built for peak performance.
+                                            Our creative and performance teams work in sync, continuously refining
+                                            messaging, visuals, targeting and budgets in real time. After every
+                                            campaign, we review, learn and come back with sharper creative and stronger
+                                            results. Continuous improvement isn't a promise, it's our process.</p>
+
+                                    </div>
+
+                                    <div class="col-lg-5">
+
+                                        <div class="lottie-box">
+                                            <dotlottie-player
+                                                src="https://nians.com/wp-content/uploads/2026/03/20210909-074915lf30_editor_fy6tfzer-1.lottie"
+                                                speed="1" loop autoplay
+                                                style="width:300px; height:300px;"></dotlottie-player>
+                                        </div>
+
+                                    </div>
 
                                 </div>
 
@@ -1157,333 +1277,265 @@
 
                     </div>
 
-                    <!-- STEP 2 -->
-
-                    <div class="process-item">
-
-                        <div class="process-content">
-
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-9">
-
-                                    <h2>Growth Blueprint</h2>
-
-                                    <p>
-                                       
-                                      With discovery done, we identify the most profitable channels based on where your customers spend their time. Our creative team builds compelling assets while we construct a high-converting sales funnel around every stage of your customer's journey. Budget is allocated through a data-driven process, ensuring every rupee is mapped to both creative impact and performance potential.
-
-
-                                    </p>
-
-                                </div>
-
-                                <div class="col-lg-5">
-
-                                    <div class="lottie-box">
-                            <dotlottie-player src="https://nians.com/wp-content/uploads/2026/03/20210908-071821lf30_editor_l2vr3l6s-1.lottie" speed="1" loop autoplay style="width:300px; height:300px;"></dotlottie-player>
-                        </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- STEP 3 -->
-
-                    <div class="process-item">
-
-                        <div class="process-content">
-
-                            <div class="row align-items-center">
-
-                                <div class="col-lg-9">
-
-                                    <h2>Execute & Evolve</h2>
-
-                                    <p>
-                                       Once the strategy is signed off, we deploy the right mix of creative content, platforms and tools to launch campaigns built for peak performance. Our creative and performance teams work in sync, continuously refining messaging, visuals, targeting and budgets in real time. After every campaign, we review, learn and come back with sharper creative and stronger results. Continuous improvement isn't a promise, it's our process.</p>
-
-                                </div>
-
-                                <div class="col-lg-5">
-
-                                    <div class="lottie-box">
-                            <dotlottie-player src="https://nians.com/wp-content/uploads/2026/03/20210909-074915lf30_editor_fy6tfzer-1.lottie" speed="1" loop autoplay style="width:300px; height:300px;"></dotlottie-player>
-                        </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
+    <!--Process Section End-->
+    <!--Why Choose Section Start-->
 
-</section>
- <!--Process Section End-->
-<!--Why Choose Section Start-->
+    <section class="why-choose-section py-5">
+        <div class="container">
+            <div class="row ">
 
-<section class="why-choose-section py-5">
-    <div class="container">
-        <div class="row ">
+                <!-- Left Content -->
+                <div class="col-lg-5">
+                    <div class="content-box">
+                        <h2 class="main-title">
+                            WHY <br>
+                            CHOOSE <span>us</span>
+                        </h2>
 
-            <!-- Left Content -->
-            <div class="col-lg-5">
-                <div class="content-box">
-                    <h2 class="main-title">
-                        WHY <br>
-                        CHOOSE <span>us</span>
-                    </h2>
+                        <p class="description">
+                            Most agencies give you deliverables. We give you growth.
+                            With 20+ years of experience, an AI-powered approach and
+                            a track record of reducing CAC by 40% while scaling revenue,
+                            we've built our reputation on results that are measurable,
+                            repeatable and real.
+                        </p>
 
-                    <p class="description">
-                        Most agencies give you deliverables. We give you growth.
-                        With 20+ years of experience, an AI-powered approach and
-                        a track record of reducing CAC by 40% while scaling revenue,
-                        we've built our reputation on results that are measurable,
-                        repeatable and real.
-                    </p>
-
-                    <a href="#" class="btn btn-grow">
-                        Start Growing With Us →
-                    </a>
+                        <a href="#" class="btn btn-grow">
+                            Start Growing With Us →
+                        </a>
+                    </div>
                 </div>
-            </div>
 
-           
 
-            <div class="col-lg-7">
-    <div class="bars-wrapper">
 
-        <div class="bar-group">
-            <div class="graph-img graph-1 ">
-                <img src="./assets/img/orange-graph.webp" alt="Orange Graph">
+                <div class="col-lg-7">
+                    <div class="bars-wrapper">
+
+                        <div class="bar-group">
+                            <div class="graph-img graph-1 ">
+                                <img src="./assets/img/orange-graph.webp" alt="Orange Graph">
+                            </div>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="graph-img graph-2">
+                                <img src="./assets/img/light-blue-graph.webp" alt="Light Blue Graph">
+                            </div>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="graph-img graph-3">
+                                <img src="./assets/img/blue-graph.webp" alt="Blue Graph">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div class="bar-group">
-            <div class="graph-img graph-2">
-                <img src="./assets/img/light-blue-graph.webp" alt="Light Blue Graph">
-            </div>
-        </div>
-
-        <div class="bar-group">
-            <div class="graph-img graph-3">
-                <img src="./assets/img/blue-graph.webp" alt="Blue Graph">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-        </div>
-    </div>
-</section>
-<!--Why Choose Section End-->
-  <!--Teastimonals Section Start-->
+    </section>
+    <!--Why Choose Section End-->
+    <!--Teastimonals Section Start-->
 
 
-<div class="testimonial-section">
+    <div class="testimonial-section">
 
-     <div class="testimonial text-center">
+        <div class="testimonial text-center">
             <span class="main-heading ">
                 What Our<br> Clients
-                </span>
-                
-                <span class="highlight"> Say</span>
-                 
-           </div>
-  <div class="container">
+            </span>
 
-  <div class="row">
-    <div class="col-12">
-      <div class="cards_section">
-        <div class="custom-card card1" id="1">
-          <div class="testimonial-card ">
-                  
-            <div class="d-flex justify-content-between align-items-start flex-wrap">
+            <span class="highlight"> Say</span>
 
-                <div class="client-info d-flex align-items-center">
-                    <img src="./assets/img/test.jpg" alt="client">
+        </div>
+        <div class="container">
 
-                    <div class="ms-3">
-                        <h4>Suraj Singh Kunwar</h4>
-                        <span>Manager - Digital Marketing</span>
+            <div class="row">
+                <div class="col-12">
+                    <div class="cards_section">
+                        <div class="custom-card card1" id="1">
+                            <div class="testimonial-card ">
+
+                                <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+                                    <div class="client-info d-flex align-items-center">
+                                        <img src="./assets/img/test.jpg" alt="client">
+
+                                        <div class="ms-3">
+                                            <h4>Suraj Singh Kunwar</h4>
+                                            <span>Manager - Digital Marketing</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="brand-logo">
+                                        <img src="./assets/img/test-1-1.webp" alt="brand">
+                                    </div>
+
+                                </div>
+
+                                <div class="testimonial-content mt-5">
+
+                                    <h3>
+                                        A Partnership That Transformed Our Digital Presence
+                                    </h3>
+
+                                    <p>
+                                        Working with Nians (formerly Technicians) has been transformative
+                                        for our social media presence. They truly understand our brand's
+                                        legacy and have consistently created engaging content that resonates
+                                        with our audience. The creative strategies and innovative campaigns
+                                        they bring to the table have significantly enhanced our online
+                                        visibility and customer engagement. We're thrilled to have found
+                                        a team that shares our vision and works tirelessly to bring it to life.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="custom-card card2" id="2">
+                            <div class="testimonial-card ">
+
+                                <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+                                    <div class="client-info d-flex align-items-center">
+                                        <img src="./assets/img/client_img.webp" alt="client">
+
+                                        <div class="ms-3">
+                                            <h4>Suraj Singh Kunwar</h4>
+                                            <span>Manager - Digital Marketing</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="brand-logo">
+                                        <img src="./assets/img/tata.webp" alt="brand">
+                                    </div>
+
+                                </div>
+
+                                <div class="testimonial-content mt-5">
+
+                                    <h3>
+                                        A Partnership That Transformed Our Digital Presence
+                                    </h3>
+
+                                    <p>
+                                        Working with Nians (formerly Technicians) has been transformative
+                                        for our social media presence. They truly understand our brand's
+                                        legacy and have consistently created engaging content that resonates
+                                        with our audience. The creative strategies and innovative campaigns
+                                        they bring to the table have significantly enhanced our online
+                                        visibility and customer engagement. We're thrilled to have found
+                                        a team that shares our vision and works tirelessly to bring it to life.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="custom-card card3" id="3">
+                            <div class="testimonial-card ">
+
+                                <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+                                    <div class="client-info d-flex align-items-center">
+                                        <img src="./assets/img/testimonialimg3.webp" alt="client">
+
+                                        <div class="ms-3">
+                                            <h4>Suraj Singh Kunwar</h4>
+                                            <span>Manager - Digital Marketing</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="brand-logo">
+                                        <img src="./assets/img/housing-2.webp" alt="brand">
+                                    </div>
+
+                                </div>
+
+                                <div class="testimonial-content mt-5">
+
+                                    <h3>
+                                        A Partnership That Transformed Our Digital Presence
+                                    </h3>
+
+                                    <p>
+                                        Working with Nians (formerly Technicians) has been transformative
+                                        for our social media presence. They truly understand our brand's
+                                        legacy and have consistently created engaging content that resonates
+                                        with our audience. The creative strategies and innovative campaigns
+                                        they bring to the table have significantly enhanced our online
+                                        visibility and customer engagement. We're thrilled to have found
+                                        a team that shares our vision and works tirelessly to bring it to life.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="custom-card card4" id="4">
+                            <div class="testimonial-card ">
+
+                                <div class="d-flex justify-content-between align-items-start">
+
+                                    <div class="client-info d-flex align-items-center">
+                                        <img src="./assets/img/test4.webp" alt="client">
+
+                                        <div class="ms-3">
+                                            <h4>Suraj Singh Kunwar</h4>
+                                            <span>Manager - Digital Marketing</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="brand-logo">
+                                        <img src="./assets/img/apollo-1.webp" alt="brand">
+                                    </div>
+
+                                </div>
+
+                                <div class="testimonial-content mt-5">
+
+                                    <h3>
+                                        A Partnership That Transformed Our Digital Presence
+                                    </h3>
+
+                                    <p>
+                                        Working with Nians (formerly Technicians) has been transformative
+                                        for our social media presence. They truly understand our brand's
+                                        legacy and have consistently created engaging content that resonates
+                                        with our audience. The creative strategies and innovative campaigns
+                                        they bring to the table have significantly enhanced our online
+                                        visibility and customer engagement. We're thrilled to have found
+                                        a team that shares our vision and works tirelessly to bring it to life.
+                                    </p>
+
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="brand-logo">
-                    <img src="./assets/img/test-1-1.webp" alt="brand">
-                </div>
-
             </div>
-
-            <div class="testimonial-content mt-5">
-
-                <h3>
-                    A Partnership That Transformed Our Digital Presence
-                </h3>
-
-                <p>
-                    Working with Nians (formerly Technicians) has been transformative
-                    for our social media presence. They truly understand our brand's
-                    legacy and have consistently created engaging content that resonates
-                    with our audience. The creative strategies and innovative campaigns
-                    they bring to the table have significantly enhanced our online
-                    visibility and customer engagement. We're thrilled to have found
-                    a team that shares our vision and works tirelessly to bring it to life.
-                </p>
-
-            </div>
-
         </div>
-        </div>
-        <div class="custom-card card2" id="2">
-          <div class="testimonial-card ">
-                  
-            <div class="d-flex justify-content-between align-items-start flex-wrap">
-
-                <div class="client-info d-flex align-items-center">
-                    <img src="./assets/img/client_img.webp" alt="client">
-
-                    <div class="ms-3">
-                        <h4>Suraj Singh Kunwar</h4>
-                        <span>Manager - Digital Marketing</span>
-                    </div>
-                </div>
-
-                <div class="brand-logo">
-                    <img src="./assets/img/tata.webp" alt="brand">
-                </div>
-
-            </div>
-
-            <div class="testimonial-content mt-5">
-
-                <h3>
-                    A Partnership That Transformed Our Digital Presence
-                </h3>
-
-                <p>
-                    Working with Nians (formerly Technicians) has been transformative
-                    for our social media presence. They truly understand our brand's
-                    legacy and have consistently created engaging content that resonates
-                    with our audience. The creative strategies and innovative campaigns
-                    they bring to the table have significantly enhanced our online
-                    visibility and customer engagement. We're thrilled to have found
-                    a team that shares our vision and works tirelessly to bring it to life.
-                </p>
-
-            </div>
-
-        </div>
-        </div>
-        <div class="custom-card card3" id="3" >
-            <div class="testimonial-card ">
-                  
-            <div class="d-flex justify-content-between align-items-start flex-wrap">
-
-                <div class="client-info d-flex align-items-center">
-                    <img src="./assets/img/testimonialimg3.webp" alt="client">
-
-                    <div class="ms-3">
-                        <h4>Suraj Singh Kunwar</h4>
-                        <span>Manager - Digital Marketing</span>
-                    </div>
-                </div>
-
-                <div class="brand-logo">
-                    <img src="./assets/img/housing-2.webp" alt="brand">
-                </div>
-
-            </div>
-
-            <div class="testimonial-content mt-5">
-
-                <h3>
-                    A Partnership That Transformed Our Digital Presence
-                </h3>
-
-                <p>
-                    Working with Nians (formerly Technicians) has been transformative
-                    for our social media presence. They truly understand our brand's
-                    legacy and have consistently created engaging content that resonates
-                    with our audience. The creative strategies and innovative campaigns
-                    they bring to the table have significantly enhanced our online
-                    visibility and customer engagement. We're thrilled to have found
-                    a team that shares our vision and works tirelessly to bring it to life.
-                </p>
-
-            </div>
-
-        </div>
-        </div>
-        
-         <div class="custom-card card4" id="4">
-            <div class="testimonial-card ">
-                  
-            <div class="d-flex justify-content-between align-items-start">
-
-                <div class="client-info d-flex align-items-center">
-                    <img src="./assets/img/test4.webp" alt="client">
-
-                    <div class="ms-3">
-                        <h4>Suraj Singh Kunwar</h4>
-                        <span>Manager - Digital Marketing</span>
-                    </div>
-                </div>
-
-                <div class="brand-logo">
-                    <img src="./assets/img/apollo-1.webp" alt="brand">
-                </div>
-
-            </div>
-
-            <div class="testimonial-content mt-5">
-
-                <h3>
-                    A Partnership That Transformed Our Digital Presence
-                </h3>
-
-                <p>
-                    Working with Nians (formerly Technicians) has been transformative
-                    for our social media presence. They truly understand our brand's
-                    legacy and have consistently created engaging content that resonates
-                    with our audience. The creative strategies and innovative campaigns
-                    they bring to the table have significantly enhanced our online
-                    visibility and customer engagement. We're thrilled to have found
-                    a team that shares our vision and works tirelessly to bring it to life.
-                </p>
-
-            </div>
-
-        </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-</div>
-  <!-- Teastimonals Section End    -->
-   <!--Section Start-->
+    <!-- Teastimonals Section End    -->
+    <!--Section Start-->
 
- 
-   <!--Section Start -->
 
-   <!--Color Change Section Start-->
-<!-- CTA Section Start -->
-<!-- <section class="cta-section my-4">
+    <!--Section Start -->
+
+    <!--Color Change Section Start-->
+    <!-- CTA Section Start -->
+    <!-- <section class="cta-section my-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center">
@@ -1503,8 +1555,8 @@
         </div>
     </div>
 </section> -->
-<!-- CTA Section End -->
-   <!-- <section class="hero-marquee-section">
+    <!-- CTA Section End -->
+    <!-- <section class="hero-marquee-section">
     <div class="marquee-wrapper">
         <div class="marquee-track">
             <h1 class="marquee-text text-center">To Turn Strategy Into Revenue</h1>
@@ -1517,7 +1569,7 @@
     </div>
 </section> -->
 
-<!-- <section class="ready-section">
+    <!-- <section class="ready-section">
     <div class="container-fluid px-0">
         <div class="color-section text-center" id="animatedSection">
             
@@ -1532,151 +1584,151 @@
     </div>
 </section> -->
     <!--Color Change Section Start-->
-  <!--Footer Section Start-->
-  <section class="footer-info ">
-    <div class="container">
-        <div class="row g-4">
+    <!--Footer Section Start-->
+    <section class="footer-info ">
+        <div class="container">
+            <div class="row g-4">
 
-            <!-- Contact Details -->
-            <div class="col-lg-3">
-                <h4 class="footer-title">Contact Details</h4>
+                <!-- Contact Details -->
+                <div class="col-lg-3">
+                    <h4 class="footer-title">Contact Details</h4>
 
-                <div class="mt-4">
-                    <h6 class="fw-semibold">Sales Queries</h6>
-                    <a href="tel:9899920599" class="contact-btn">
-                        9899920599
-                    </a>
-                </div>
-
-                <div class="social-section mt-5">
-                    <h4 class="footer-title">Stay Connected</h4>
-
-                    <div class="social-icons mt-3">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
+                    <div class="mt-4">
+                        <h6 class="fw-semibold">Sales Queries</h6>
+                        <a href="tel:9899920599" class="contact-btn">
+                            9899920599
                         </a>
-                       <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-
-                        <a href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
                     </div>
-                </div>
-            </div>
 
-            <!-- Locations -->
-            <div class="col-lg-9">
-                <h4 class="footer-title">Our Locations</h4>
+                    <div class="social-section mt-5">
+                        <h4 class="footer-title">Stay Connected</h4>
 
-                <div class="location-box mt-4">
-                    <div class="row">
+                        <div class="social-icons mt-3">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
 
-                        <div class="col-md-4">
-                            <div class="location-item">
-                                <h5>
-                                   <i class="fa-solid fa-location-dot"></i>
-                                    Gurgaon
-                                </h5>
-                                <p>
-                                    1101, 11th Floor, Welldone Techpark,
-                                    Sohna Road, Sector 48, Gurgaon,
-                                    Haryana, 122018
-                                </p>
-                            </div>
+                            <a href="#"> <i class="fa-brands fa-facebook-f"></i> </a>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="location-item">
-                                <h5>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    Mumbai
-                                </h5>
-                                <p>
-                                    Technopolis Knowledge Park, 5th Floor,
-                                    Hanuman Nagar, Andheri East,
-                                    Mumbai, Maharashtra, 400093
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="location-item">
-                                <h5>
-                                   <i class="fa-solid fa-location-dot"></i>
-                                    Bengaluru
-                                </h5>
-                                <p>
-                                    Prestige Atlanta, 80 Feet Rd,Koramangala 1A Block, Bengaluru, KA 560034
-                                </p>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
-                <!-- Partner Logos -->
-              
-                <div class="partner-section mt-5">
-    <h4 class="footer-title">Partner Ecosystem</h4>
+                <!-- Locations -->
+                <div class="col-lg-9">
+                    <h4 class="footer-title">Our Locations</h4>
 
-    <div class="swiper partnerSwiper mt-4">
-        <div class="swiper-wrapper">
+                    <div class="location-box mt-4">
+                        <div class="row">
 
-            <div class="swiper-slide">
-                <img src="./assets/img/logo1.webp" alt="logo_brand">
+                            <div class="col-md-4">
+                                <div class="location-item">
+                                    <h5>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Gurgaon
+                                    </h5>
+                                    <p>
+                                        1101, 11th Floor, Welldone Techpark,
+                                        Sohna Road, Sector 48, Gurgaon,
+                                        Haryana, 122018
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="location-item">
+                                    <h5>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Mumbai
+                                    </h5>
+                                    <p>
+                                        Technopolis Knowledge Park, 5th Floor,
+                                        Hanuman Nagar, Andheri East,
+                                        Mumbai, Maharashtra, 400093
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="location-item">
+                                    <h5>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Bengaluru
+                                    </h5>
+                                    <p>
+                                        Prestige Atlanta, 80 Feet Rd,Koramangala 1A Block, Bengaluru, KA 560034
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Partner Logos -->
+
+                    <div class="partner-section mt-5">
+                        <h4 class="footer-title">Partner Ecosystem</h4>
+
+                        <div class="swiper partnerSwiper mt-4">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo1.webp" alt="logo_brand">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo2.webp" alt="logo_brand">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo1.webp" alt="logo_brand">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo2.webp" alt="logo_brand">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo1.webp" alt="logo_brand">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="./assets/img/logo2.webp" alt="logo_brand">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-
-            <div class="swiper-slide">
-                <img src="./assets/img/logo2.webp" alt="logo_brand">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="./assets/img/logo1.webp" alt="logo_brand">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="./assets/img/logo2.webp" alt="logo_brand">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="./assets/img/logo1.webp" alt="logo_brand">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="./assets/img/logo2.webp" alt="logo_brand">
-            </div>
-
         </div>
+    </section>
+    <!--Footer Section End-->
+    <!--Bottom Left Section Start-->
+    <div class="btn-consultation">
+        Request a Consultation
     </div>
-</div>
 
-            </div>
-
-        </div>
-    </div>
-</section>
-   <!--Footer Section End-->
-   <!--Bottom Left Section Start-->
-<div class="btn-consultation">
-    Request a Consultation
-  </div>
-   
-      <!--Bottom Left Section End-->
+    <!--Bottom Left Section End-->
 
 
 
 
 
- <script type="module"
-        src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs">
+    <script type="module" src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs">
     </script>
-   
-     <script src=" 	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./assets/js/script.js"></script>
-<script>
-  AOS.init();
-</script>
+
+    <script src=" 	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>

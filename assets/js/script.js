@@ -934,276 +934,8 @@ ScrollTrigger.matchMedia({
     }
 });
 
-//Add section Start
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     // ==========================================
-//     // ALL Clicks Permanently Disable
-//     // ==========================================
-//     // Target the unique trigger buttons
-//     document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
-//         btn.style.pointerEvents = "none";
-//         btn.style.cursor = "default";
-//         btn.removeAttribute("data-bs-toggle");
-//         btn.removeAttribute("data-bs-target");
-//         btn.removeAttribute("href");
-//     });
-
-//     // ==========================================
-//     // Initial Setup
-//     // ==========================================
-//     gsap.set(".tab-content", {
-//         position: "relative",
-//         minHeight: "500px",
-//         overflow: "visible"
-//     });
-
-//     // Ensure all unique graphic panes are stacked but hidden except the first one
-//     gsap.set(".tab-pane-unique", {
-//         position: "absolute",
-//         top: 0, 
-//         left: 0,
-//         width: "100%",
-//         autoAlpha: 0,
-//         display: "block",
-//         overflow: "visible"
-//     });
-
-//     // Initial State: Paid Ads graphic visible, Paid Ads accordion open
-//     gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
-    
-//     gsap.set("#paid-content-accordion", {
-//         display: "block",
-//         height: "auto",
-//         autoAlpha: 1,
-//         overflow: "visible"
-//     });
-
-//     // Accordion setup for others (start closed)
-//     gsap.set("#seo-content-accordion, #smm-content-accordion", {
-//         display: "block",
-//         height: 0,
-//         autoAlpha: 0,
-//         overflow: "visible"
-//     });
-
-//     // Nav colors initial state
-//     // gsap.set(".services-section .nav-pills .nav-link", { color: "#000" });
-//     // gsap.set("#paid-ads-trigger", { color: "#022d63" });
-
-   
-//   const animationFlow = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".services-section",
-//         start: "top top",
-//         end: "+=4000",
-//         pin: true,
-//         scrub: 1.9,
-//         invalidateOnRefresh: true
-//     }
-// });
 
 
-
-
-//     // Right side panel subtle movement logic
-//     animationFlow.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
-
-//     // Paid Ads view hold gap
-//     animationFlow.to({}, { duration: 2 }); 
-
-//     // ==========================================
-//     // STEP 1: Paid → SEO
-//     // ==========================================
-
-//     // Smoothly close Paid Ads accordion
-//     animationFlow.to("#paid-content-accordion", {
-//         height: 0,
-//         autoAlpha: 0,
-//         duration: 0.4,
-//         // ease: "power2.inOut"
-//     }, "s1_close");
-
-//     // CROSS-FADE: Paid Ads graphic goes away, SEO graphic appears
-//     animationFlow.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s1_close")
-//       .to("#seo-graphic",      { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s1_close");
-
-//     // Nav text color transition
-//     // animationFlow.to("#paid-ads-trigger", { color: "#000",    duration: 0.5 }, "s1_close")
-//     //   .to("#seo-trigger",      { color: "#022d63", duration: 0.5 }, "s1_close");
-
-//     // Smoothly open SEO accordion
-//     animationFlow.to("#seo-content-accordion", {
-//         height: "auto",
-//         autoAlpha: 1,
-//         overflow: "visible",
-//         duration: 0.4,
-//         ease: "power2.inOut"
-//     }, "s1_close+=0.1");
-
-//     // SEO view hold gap
-//     animationFlow.to({}, { duration: 2 }); 
-
-//     // ==========================================
-//     // STEP 2: SEO → SMM
-//     // ==========================================
-
-//     // Smoothly close SEO accordion
-//     animationFlow.to("#seo-content-accordion", {
-//         height: 0,
-//         autoAlpha: 0,
-//         duration: 0.4,
-//         // ease: "power2.inOut"
-//     }, "s2_close");
-
-//     // CROSS-FADE: SEO graphic goes away, SMM graphic appears
-//     animationFlow.to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power2.inOut" }, "s2_close")
-//       .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power2.inOut" }, "s2_close");
-
-//     // Nav text color transition
-//     // animationFlow.to("#seo-trigger", { color: "#000",    duration: 0.5 }, "s2_close")
-//     //   .to("#smm-trigger", { color: "#022d63", duration: 0.5 }, "s2_close");
-
-//     // Smoothly open SMM accordion
-//     animationFlow.to("#smm-content-accordion", {
-//         height: "auto",
-//         autoAlpha: 1,
-//         overflow: "visible",
-//         duration: 0.4,
-//         // ease: "power2.inOut"
-//     }, "s2_close+=0.1");
-
-//     // Final state hold gap
-//     animationFlow.to({}, { duration: 1}); 
-// });
-document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // ==========================================
-    // ALL Clicks Permanently Disable
-    // ==========================================
-    document.querySelectorAll("#paid-ads-trigger, #seo-trigger, #smm-trigger").forEach((btn) => {
-        btn.style.pointerEvents = "none";
-        btn.style.cursor = "default";
-        btn.removeAttribute("data-bs-toggle");
-        btn.removeAttribute("data-bs-target");
-        btn.removeAttribute("href");
-    });
-
-   
-    gsap.set(".tab-content", {
-        position: "relative",
-        minHeight: "500px",
-        overflow: "visible"
-    });
-
-    gsap.set(".tab-pane-unique", {
-        position: "absolute",
-        top: 0, 
-        left: 0,
-        width: "100%",
-        autoAlpha: 0,
-        display: "block",
-        overflow: "visible"
-    });
-
-
-    gsap.set("#paid-ads-graphic", { autoAlpha: 1 });
-    gsap.set("#paid-content-accordion", { display: "block", height: "auto", autoAlpha: 1 });
-    gsap.set("#seo-content-accordion, #smm-content-accordion", { display: "block", height: 0, autoAlpha: 0 });
-
-    
-    let mm = gsap.matchMedia();
-
-    mm.add({
-        isDesktop: "(min-width: 992px)",
-        isMobile: "(max-width: 991px)"
-    }, (context) => {
-        let { isDesktop } = context.conditions;
-
-        const animationFlow = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".services-section",
-                start: "top top",
-                end: isDesktop ? "+=4000" : "+=2500", 
-                pin: true,
-                scrub: 1.5,
-                invalidateOnRefresh: true
-            }
-        });
-
-      
-        animationFlow.fromTo(".tab-content", { y: -20 }, { y: 20, ease: "none" }, 0);
-        animationFlow.to({}, { duration: 2 }); 
-
-        
-        animationFlow.call(() => {
-            document.querySelector("#paid-ads-trigger").classList.remove("active");
-            document.querySelector("#seo-trigger").classList.add("active");
-            document.querySelector("#smm-trigger").classList.remove("active");
-        }, null, "s1_close");
-
-
-        animationFlow.to("#paid-content-accordion", {
-            height: 0,
-            autoAlpha: 0,
-            duration: 0.6,
-            ease: "power1.inOut"
-        }, "s1_close");
-
-        animationFlow.to("#paid-ads-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s1_close")
-                     .to("#seo-graphic", { autoAlpha: 1, duration: 0.6, ease: "power1.inOut" }, "s1_close");
-
-        animationFlow.to("#seo-content-accordion", {
-            height: "auto",
-            autoAlpha: 1,
-            duration: 0.6,
-            ease: "power1.inOut"
-        }, "s1_close+=0.1");
-
-        animationFlow.to({}, { duration: 2 }); 
-
-       
-        
-        animationFlow.call(() => {
-            document.querySelector("#paid-ads-trigger").classList.remove("active");
-            document.querySelector("#seo-trigger").classList.remove("active");
-            document.querySelector("#smm-trigger").classList.add("active");
-        }, null, "s2_close");
-
-         animationFlow.to("#paid-content-accordion", {
-            // height: 0,
-            autoAlpha: 0,
-            duration: 0.6,
-            ease: "power1.inOut"
-        }, "s2_close");
-
-
-        // 2. एकॉर्डियन और ग्राफिक्स क्लोज/ओपन करें
-        animationFlow.to("#seo-content-accordion", {
-            // height: 0,
-            autoAlpha: 0,
-            duration: 0.6,
-            ease: "power1.inOut"
-        }, "s2_close");
-
-        animationFlow .to("#paid-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s2_close")
-                      .to("#seo-graphic", { autoAlpha: 0, duration: 0.6, ease: "power1.inOut" }, "s2_close")
-                     .to("#smm-graphic", { autoAlpha: 1, duration: 0.6, ease: "power1.inOut" }, "s2_close");
-
-        animationFlow.to("#smm-content-accordion", {
-            // height: "auto",
-            autoAlpha: 1,
-            duration: 0.6,
-            ease: "power1.inOut"
-        }, "s2_close+=0.1");
-
-        animationFlow.to({}, { duration: 1 }); 
-    });
-});
 
 
 
@@ -1964,110 +1696,384 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // Color Section Start
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("DOMContentLoaded", () => {
+// window.addEventListener("DOMContentLoaded", () => {
 
-    gsap.fromTo(".cta-section",
-        {
-            y: 30,
-            scale: 1.05,
-            opacity: 1
-        },
-        {
-            y: -230,
-            scale: 1,
-            opacity: 1,
-            // ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".cta-section",
-                // start: "top 5%",
-                end: "top 5%",
-                scrub: 0.8,
-                toggleActions: "play none none reverse"
-            }
-        }
-    );
+//     gsap.fromTo(".cta-section",
+//         {
+//             y: 30,
+//             scale: 1.05,
+//             opacity: 1
+//         },
+//         {
+//             y: -230,
+//             scale: 1,
+//             opacity: 1,
+//             // ease: "power2.out",
+//             scrollTrigger: {
+//                 trigger: ".cta-section",
+//                 // start: "top 5%",
+//                 end: "top 5%",
+//                 scrub: 0.8,
+//                 toggleActions: "play none none reverse"
+//             }
+//         }
+//     );
 
-});
+// });
 //   Animtion three Section
+
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// window.addEventListener("load", () => {
+
+//   // Each dot's full route: source (logo) -> waypoint (trigger) -> final (card)
+//   const routes = [
+//     {
+//       source: document.querySelector(".logo-dots .circle_1"),
+//       waypoint: document.querySelector("#paid-ads-trigger .icon-box"),
+//       final: document.querySelector("#card-first .brand-icon"),
+//     },
+//     {
+//       source: document.querySelector(".logo-dots .circle_2"),
+//       waypoint: document.querySelector("#seo-trigger .icon-box"),
+//       final: document.querySelector("#card-second .brand-icon"),
+//     },
+//     {
+//       source: document.querySelector(".logo-dots .circle_3"),
+//       waypoint: document.querySelector("#smm-trigger .icon-box"),
+//       final: document.querySelector("#card-third .brand-icon"),
+//     },
+//   ];
+
+//   const docPos = (el) => {
+//     const r = el.getBoundingClientRect();
+//     return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height };
+//   };
+
+//   routes.forEach(({ source, waypoint, final }) => {
+//     if (!source || !waypoint || !final) return; // skip silently if markup is missing
+
+//     // 1. Build the traveling clone once. It lives for the whole page.
+//     const dot = source.cloneNode(true);
+//     dot.classList.add("traveling-dot");
+//     Object.assign(dot.style, {
+//       position: "absolute",
+//       margin: "0",
+//       zIndex: "88",
+//       pointerEvents: "none",
+//       willChange: "transform, opacity",
+//     });
+//     document.body.appendChild(dot);
+
+//     // start position is set once — the clone's own home is fixed
+//     const start = docPos(source);
+//     dot.style.left = `${start.x}px`;
+//     dot.style.top = `${start.y}px`;
+//     dot.style.width = `${start.w}px`;
+//     dot.style.height = `${start.h}px`;
+
+//     // Hide the static original — the clone represents it from now on.
+//     gsap.set(source, { autoAlpha: 0 });
+
+//     // 2. Function-based targets: re-measured live every time GSAP asks
+//     //    for them (on scroll and on every ScrollTrigger.refresh()), so
+//     //    late-loading images/lottie players never leave stale numbers.
+//     const midX = () => {
+//       const mid = docPos(waypoint);
+//       return mid.x + mid.w / 2 - start.w / 2 - start.x;
+//     };
+//     const midY = () => {
+//       const mid = docPos(waypoint);
+//       return mid.y - start.h - 10 - start.y;
+//     };
+//     const endX = () => {
+//       const end = docPos(final);
+//       return end.x + end.w / 2 - start.w / 2 - start.x;
+//     };
+//     const endY = () => {
+//       const end = docPos(final);
+//       return end.y + end.h / 2 - start.h / 2 - start.y;
+//     };
+
+//     // 3. Leg 1 — logo box to the service trigger.
+//     gsap.timeline({
+//       scrollTrigger: {
+//         trigger: ".services-section",
+//         start: "top bottom",
+//         end: "top center",
+//         scrub: 1,
+//         invalidateOnRefresh: true, // re-run the function-based values above on refresh
+//       },
+//     })
+//       .fromTo(
+//         dot,
+//         { x: 0, y: 0, scale: 1, autoAlpha: 1 },
+//         {
+//           x: midX,
+//           y: midY,
+//           scale: 1.2,
+//           ease: "none",
+//           onStart: () => waypoint.classList.add("dot-landed"),
+//           onReverseComplete: () => waypoint.classList.remove("dot-landed"),
+//         }
+//       );
+
+//     // 4. Leg 2 — service trigger onward into the next section's card.
+//     //    Same dot element, new ScrollTrigger tied to the cards section.
+//     gsap.timeline({
+//       scrollTrigger: {
+//         trigger: ".scroll-strip",
+//         start: "top20%",
+//         end: "top center",
+//         scrub: 1.99,
+//         // invalidateOnRefresh: true,
+//       },
+//     })
+//       .fromTo(
+//         dot,
+//         { x: midX, y: midY, scale: 1.2, autoAlpha: 1 },
+//         {
+//           x: endX,
+//           y: endY,
+//           scale: 1,
+//           ease: "none",
+//           onStart: () => waypoint.classList.remove("dot-landed"),
+//           onComplete: () => final.closest(".cs-card")?.classList.add("dot-landed"),
+//           onReverseComplete: () => final.closest(".cs-card")?.classList.remove("dot-landed"),
+//         }
+//       );
+//   });
+
+//   // 5. Lottie players and web fonts can still resize things AFTER "load"
+//   //    fires. Give them a beat, then force GSAP to re-measure everything.
+//   setTimeout(() => ScrollTrigger.refresh(), 500);
+//   setTimeout(() => ScrollTrigger.refresh(), 1500);
+
+//   // Recalculate on resize too.
+//   let resizeTimer;
+//   window.addEventListener("resize", () => {
+//     clearTimeout(resizeTimer);
+//     resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+//   });
+// });
+
+/* ============================================================
+   Circle → Section → Next Section Scroll Animation
+   + Service tab switching (mobile-list + right-side image)
+   + Card-by-card reveal in the next section
+   Requires GSAP + ScrollTrigger loaded BEFORE this file:
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   <script src="circle-scroll-animation.js"></script>
+
+   v9: added console logging around SERVICES + activateService so we
+   can confirm, per key (paid/seo/smm), whether the trigger/acc/pane
+   elements were found AND whether activateService() actually fires
+   for seo and smm as you scroll. Open console, scroll through the
+   services section, and send me what it prints.
+   ============================================================ */
+
 gsap.registerPlugin(ScrollTrigger);
 
-function setupCircleTimeline(circleSelector, iconSelector, cardSelector) {
-    const circle = document.querySelector(circleSelector);
-    const icon = document.querySelector(iconSelector);
-    const card = document.querySelector(cardSelector);
+const MIN_SECTION_HEIGHT = 1400;
 
-    if (!circle || !icon || !card) return;
-
-    // Circles ki initial setting (Translate clear rakhna starting mein)
-    gsap.set(circle, { x: 0, y: 0, zIndex: 99 });
-
-    // 1. Page ke current scroll ko capture karna taaki absolute calculation ho sake
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-
-    // 2. Element ke absolute positions (Page ke respect mein, viewport ke nahi)
-    const cRect = circle.getBoundingClientRect();
-    const iRect = icon.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
-
-    const circleCenterX = cRect.left + scrollLeft + cRect.width / 2;
-    const circleCenterY = cRect.top + scrollTop + cRect.height / 2;
-
-    const iconCenterX = iRect.left + scrollLeft + iRect.width / 2;
-    const iconCenterY = iRect.top + scrollTop + iRect.height / 2;
-
-    const cardCenterX = cardRect.left + scrollLeft + cardRect.width / 2;
-    const cardCenterY = cardRect.top + scrollTop + cardRect.height / 2;
-
-    // 3. Exact Distance (Jitna circle ko move karna hai)
-    const phase1X = iconCenterX - circleCenterX;
-    const phase1Y = iconCenterY - circleCenterY;
-
-    const phase2X = cardCenterX - circleCenterX;
-    const phase2Y = cardCenterY - circleCenterY;
-
-    // Master Timeline
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".services-section", 
-            start: "top 75%", // Jaise hi section 75% viewport par aaye, animation start ho
-            endTrigger: card,             
-            end: "bottom 25%",            
-            scrub: 1.2, 
-            invalidateOnRefresh: true 
-        }
-    });
-
-    // --- PHASE 1: Circle -> Direct Icon Box Ke Center Mein ---
-    tl.to(circle, {
-        x: phase1X,
-        y: phase1Y,
-        duration: 1.5,
-        ease: "power1.inOut" 
-    });
-
-    // --- MINIMAL PAUSE ---
-    tl.to(circle, { duration: 0.3 });
-
-    // --- PHASE 2: Icon Box -> Final Card Ke Center Mein ---
-    tl.to(circle, {
-        x: phase2X,
-        y: phase2Y,
-        duration: 1.5,
-        ease: "power1.inOut"
-    });
+function ensureMinHeight(el, minPx) {
+  if (!el) return;
+  if (el.offsetHeight < minPx) {
+    el.style.minHeight = `${minPx}px`;
+  }
 }
 
-// Layout completely render hone ke baad run hoga
 window.addEventListener("load", () => {
-    // 100ms ka chota sa delay taaki browser coordinates standard position par lock karle
-    setTimeout(() => {
-        setupCircleTimeline(".cicrle_1", "#paid-ads-trigger .icon-box", "#card-first");
-        setupCircleTimeline(".cicrle_2", "#seo-trigger .icon-box", "#card-second");
-        setupCircleTimeline(".cicrle_3", "#smm-trigger .icon-box", "#card-third");
-        
-        ScrollTrigger.refresh();
-    }, 100);
+
+  ensureMinHeight(document.querySelector(".services-section"), MIN_SECTION_HEIGHT);
+  ensureMinHeight(document.querySelector(".scroll-strip"), MIN_SECTION_HEIGHT);
+
+  // --- Service tab switching (list + right-side image), scroll-driven only
+  const SERVICES = {
+    paid: {
+      trigger: document.querySelector("#paid-ads-trigger"),
+      acc: document.querySelector("#paid-content-accordion"),
+      pane: document.querySelector("#paid-ads-graphic"),
+    },
+    seo: {
+      trigger: document.querySelector("#seo-trigger"),
+      acc: document.querySelector("#seo-content-accordion"),
+      pane: document.querySelector("#seo-graphic"),
+    },
+    smm: {
+      trigger: document.querySelector("#smm-trigger"),
+      acc: document.querySelector("#smm-content-accordion"),
+      pane: document.querySelector("#smm-graphic"),
+    },
+  };
+
+  // Log exactly what was found for each service, once, on load.
+  Object.entries(SERVICES).forEach(([key, el]) => {
+    console.log(
+      `%c[circle-anim] ${key}:`, "font-weight:bold;",
+      { trigger: !!el.trigger, acc: !!el.acc, pane: !!el.pane }
+    );
+    if (!el.trigger) console.error(`[circle-anim] "${key}" trigger element NOT FOUND — check its id in the HTML.`);
+    if (!el.acc) console.error(`[circle-anim] "${key}" acc-content element NOT FOUND — check its id in the HTML.`);
+    if (!el.pane) console.error(`[circle-anim] "${key}" tab-pane element NOT FOUND — check its id in the HTML.`);
+  });
+
+  function activateService(key) {
+    console.log(`%c[circle-anim] activateService("${key}") called`, "color:#1DB7D1;font-weight:bold;");
+    Object.entries(SERVICES).forEach(([k, el]) => {
+      if (!el.trigger || !el.acc || !el.pane) return;
+      const isActive = k === key;
+      el.trigger.classList.toggle("active", isActive);
+      el.acc.classList.toggle("active", isActive);
+      el.pane.classList.toggle("active", isActive);
+      el.pane.classList.toggle("show", isActive);
+    });
+  }
+
+  activateService("paid"); // default state on load
+
+  // --- Circle travel + landing ---------------------------------------
+  const routes = [
+    {
+      key: "paid",
+      source: document.querySelector(".logo-dots .circle_1"),
+      waypoint: document.querySelector("#paid-ads-trigger .icon-box"),
+      final: document.querySelector("#card-first .brand-icon"),
+    },
+    {
+      key: "seo",
+      source: document.querySelector(".logo-dots .circle_2"),
+      waypoint: document.querySelector("#seo-trigger .icon-box"),
+      final: document.querySelector("#card-second .brand-icon"),
+    },
+    {
+      key: "smm",
+      source: document.querySelector(".logo-dots .circle_3"),
+      waypoint: document.querySelector("#smm-trigger .icon-box"),
+      final: document.querySelector("#card-third .brand-icon"),
+    },
+  ];
+
+  const docPos = (el) => {
+    const r = el.getBoundingClientRect();
+    return { x: r.left + window.scrollX, y: r.top + window.scrollY, w: r.width, h: r.height };
+  };
+
+  routes.forEach(({ key, source, waypoint, final }, i) => {
+    if (!source || !waypoint || !final) {
+      console.error(`[circle-anim] route "${key}" is missing an element — source:${!!source} waypoint:${!!waypoint} final:${!!final}. This route will NOT animate.`);
+      return;
+    }
+
+    const dot = source.cloneNode(true);
+    dot.classList.add("traveling-dot");
+    Object.assign(dot.style, {
+      position: "absolute",
+      margin: "0",
+      zIndex: "9999",
+      pointerEvents: "none",
+      willChange: "transform, opacity",
+    });
+    document.body.appendChild(dot);
+
+    const start = docPos(source);
+    dot.style.left = `${start.x}px`;
+    dot.style.top = `${start.y}px`;
+    dot.style.width = `${start.w}px`;
+    dot.style.height = `${start.h}px`;
+
+    gsap.set(source, { autoAlpha: 0 });
+
+    const midX = () => {
+      const mid = docPos(waypoint);
+      return mid.x + mid.w / 2 - start.w / 2 - start.x;
+    };
+    const midY = () => {
+      const mid = docPos(waypoint);
+      return mid.y - start.h - 10 - start.y;
+    };
+    const endX = () => {
+      const end = docPos(final);
+      return end.x + end.w / 2 - start.w / 2 - start.x;
+    };
+    const endY = () => {
+      const end = docPos(final);
+      return end.y + end.h / 2 - start.h / 2 - start.y;
+    };
+
+    const thirdRange = () => ({
+      start: `${(i * 33.33).toFixed(2)}% bottom`,
+      end: `${((i + 1) * 33.33).toFixed(2)}% top`,
+    });
+
+    // Leg 1 — logo box to the service trigger, one at a time.
+    const leg1Range = thirdRange();
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".services-section",
+        start: leg1Range.start,
+        end: leg1Range.end,
+        scrub: 2.5,
+        invalidateOnRefresh: true,
+      },
+    })
+      .fromTo(
+        dot,
+        { x: 0, y: 0, scale: 1, autoAlpha: 1 },
+        {
+          x: midX,
+          y: midY,
+          scale: 1.2,
+          ease: "none",
+          onStart: () => {
+            waypoint.classList.add("dot-landed");
+            activateService(key);
+          },
+          onReverseComplete: () => waypoint.classList.remove("dot-landed"),
+        }
+      );
+
+    // Leg 2 — service trigger onward into the next section's card.
+    const leg2Range = thirdRange();
+    const card = final.closest(".cs-card");
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".scroll-strip",
+        start: leg2Range.start,
+        end: leg2Range.end,
+        scrub: 2.5,
+        invalidateOnRefresh: true,
+      },
+    })
+      .fromTo(
+        dot,
+        { x: midX, y: midY, scale: 1.2, autoAlpha: 1 },
+        {
+          x: endX,
+          y: endY,
+          scale: 1,
+          ease: "none",
+          onStart: () => waypoint.classList.remove("dot-landed"),
+          onComplete: () => card?.classList.add("dot-landed", "is-visible"),
+          onReverseComplete: () => card?.classList.remove("dot-landed", "is-visible"),
+        }
+      );
+
+    console.log(`[circle-anim] route "${key}" wired up. Leg1 range: ${leg1Range.start} -> ${leg1Range.end}`);
+  });
+
+  setTimeout(() => ScrollTrigger.refresh(), 500);
+  setTimeout(() => ScrollTrigger.refresh(), 1500);
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 300);
+  });
 });
+
